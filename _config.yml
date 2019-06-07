@@ -107,10 +107,10 @@ analytics:
 # Site Author
 author:
   name             : "Bo Zhang"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Full Stack Dev | Bitcoin Enthusiast | Crypto Quant"
+  avatar           : "https://0xboz.github.io/images/photo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Full Stack Dev | Growth Hacker | Bitcoin Enthusiast | Crypto Quant"
   location         : "US"
-  email            : "0xboz [AT] hacari [DOT] com"
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
