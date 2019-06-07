@@ -106,9 +106,9 @@ analytics:
 
 # Site Author
 author:
-  name             : ""
+  name             : "Bo Zhang"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Full Stack Dev | Bitcoin Enthusiast | Crypto Quant
+  bio              : "Full Stack Dev | Bitcoin Enthusiast | Crypto Quant"
   location         : "US"
   email            : "0xboz [AT] hacari [DOT] com"
   links:
