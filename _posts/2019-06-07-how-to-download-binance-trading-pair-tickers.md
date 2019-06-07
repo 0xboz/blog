@@ -2,7 +2,7 @@
 title: "How to Download Binance Ticker Pairs"
 date: 2019-06-07
 tags: [binance, ]
-excerpt: "A simple python script to download all Binance trading pairs"
+excerpt: "A simple python script to download all Binance trading pair tickers"
 ---
 I am planning to create custom data bundles for [Zipline](http://www.zipline.io/). [Binance](https://www.binance.com/) is the leading crypto exchange as of this writing and it provides massive trading data via its [public API](https://github.com/binance-exchange/binance-official-api-docs). A series of upcoming tutorials will dive deep into crypto data bundles for Zipline.
 
@@ -36,7 +36,7 @@ Create get_binance_tickers.py and fire up your favorite editor.
 (venv) touch get_binance_tickers.py
 ```
 
-Here is the python code, which also can be found on my github page.
+Here is the python code, which also can be found on my [github repo](https://github.com/0xboz/get_binance_tickers).
 ```python
 #! /usr/bin/env python
 import bs4 as bs
