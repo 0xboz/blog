@@ -58,7 +58,8 @@ In [one](http://www.zipline.io/beginner-tutorial.html#my-first-algorithm) of the
 ```
 from zipline.examples import buyapple
 ```
-![zipline talib issue](/images/zipline_talib_issue.png)
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/zipline_talib_issue.png" alt="zipline talib issue">
+
 To mitigate this issue, we can install ta-lib via Quantopian channel
 ```
 conda install -c Quantopian ta-lib
