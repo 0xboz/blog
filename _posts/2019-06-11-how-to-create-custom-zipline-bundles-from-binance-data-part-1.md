@@ -164,10 +164,22 @@ def csv_to_bundle(interval='1m'):
                 daily_data_sets.append((sid, df))
 
         if minute_data_sets != []:
-            minute_bar_writer.write(minute_data_sets, show_progress=True)
+            # Dealing with missing sessions in some data sets
+            for daily_data_set in daily_data_sets:
+                try:
+                    minute_bar_writer.write(
+                        [daily_data_set], show_progress=True)
+                except Exception as e:
+                    print(e)
 
         if daily_data_sets != []:
-            daily_bar_writer.write(daily_data_sets, show_progress=True)
+            # Dealing with missing sessions in some data sets
+            for daily_data_set in daily_data_sets:
+                try:
+                    daily_bar_writer.write(
+                        [daily_data_set], show_progress=True)
+                except Exception as e:
+                    print(e)
         
         asset_db_writer.write(equities=metadata)
         print(metadata)
@@ -203,7 +215,7 @@ class BinanceExchangeCalendar(TradingCalendar):
 
 ```
 ## Put-it-all-together
-Let us put all together for ```binance_csv.py```
+Let us put all together for ```binance_csv.py```.  The source code can be found on [my github](https://github.com/0xboz/zipline_bundle) as well.
 
 ```python
 import bs4 as bs
@@ -302,7 +314,7 @@ def save_csv(reload_tickers=False, interval='1m'):
 
     return [file for file in listdir(csv_data_path) if isfile(join(csv_data_path, f))]
 
-def csv_to_bundle(interval='1m'):
+def csv_to_bundle(reload_tickers=True, reload_csv=True, interval='1m'):
 
     def ingest(environ,
                asset_db_writer,
@@ -318,7 +330,13 @@ def csv_to_bundle(interval='1m'):
                ):
 
         # Get all available csv filenames
-        csv_filenames = save_csv(reload_tickers=True, interval=interval)
+        if reload_csv:
+            csv_filenames = save_csv(
+                reload_tickers=reload_tickers, interval=interval)
+        else:
+            csv_filenames = [file for file in listdir(
+                csv_data_path) if isfile(join(csv_data_path, file))]
+
         # Loop through the filenames and create a dict to keep some temp meta data
         ticker_pairs = [{'exchange': pair.split('_')[0],
                          'symbol': pair.split('_')[1],
@@ -364,10 +382,22 @@ def csv_to_bundle(interval='1m'):
                 daily_data_sets.append((sid, df))
 
         if minute_data_sets != []:
-            minute_bar_writer.write(minute_data_sets, show_progress=True)
+            # Dealing with missing sessions in some data sets
+            for daily_data_set in daily_data_sets:
+                try:
+                    minute_bar_writer.write(
+                        [daily_data_set], show_progress=True)
+                except Exception as e:
+                    print(e)
 
         if daily_data_sets != []:
-            daily_bar_writer.write(daily_data_sets, show_progress=True)
+            # Dealing with missing sessions in some data sets
+            for daily_data_set in daily_data_sets:
+                try:
+                    daily_bar_writer.write(
+                        [daily_data_set], show_progress=True)
+                except Exception as e:
+                    print(e)
         
         asset_db_writer.write(equities=metadata)
         print(metadata)
