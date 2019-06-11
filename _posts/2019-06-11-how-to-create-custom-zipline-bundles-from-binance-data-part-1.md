@@ -69,7 +69,7 @@ def save_csv(reload_tickers=False, interval='1m'):
     start = '2017-7-14'  # Binance launch date
     end = dt.utcnow().strftime('%Y-%m-%d')  # Current day
     csv_filenames = [csv_filename for csv_filename in listdir(
-        csv_data_path) if isfile(join(csv_data_path, f))]
+        csv_data_path) if isfile(join(csv_data_path, csv_filename))]
 
     for ticker_pair in ticker_pairs:
         filename = "Binance_{}_{}.csv".format(ticker_pair, interval)        
@@ -96,7 +96,7 @@ def save_csv(reload_tickers=False, interval='1m'):
 
         print('{} saved.'.format(filename))
 
-    return [file for file in listdir(csv_data_path) if isfile(join(csv_data_path, f))]
+    return [file for file in listdir(csv_data_path) if isfile(join(csv_data_path, file))]
 ```
 ## Create Custom Ingest Function
 Once all csv have been downloaded, we need a function to loop through those files and create custom bundles.
