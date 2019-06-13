@@ -83,7 +83,7 @@ naver_site_verification  :
 
 # Social Sharing
 twitter:
-  username               : 0xboz
+  username               :
 facebook:
   username               :
   app_id                 :
@@ -142,7 +142,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://0xboz.github.io"
+      url: "https://github.com/0xboz"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:

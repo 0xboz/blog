@@ -369,4 +369,7 @@ def api_to_bundle(interval='1m'):
 # Register custom trading calendar
 register_calendar('Binance_api', BinanceExchangeCalendar())
 ```
+Here is a sample output.
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/binance_api_zipline_bundle_results.jpg" alt="binance api zipline custom bundle">
+
 Again, you can also find the source code on my [github](https://github.com/0xboz/zipline_bundle) as always. I hope you have enjoyed my tutorials so far. Shoot me a message if you have questions and comments. Ciao!
