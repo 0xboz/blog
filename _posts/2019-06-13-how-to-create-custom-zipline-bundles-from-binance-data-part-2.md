@@ -183,11 +183,10 @@ def api_to_bundle(interval='1m'):
 
         asset_db_writer.write(equities=metadata)
         print(metadata)
+        adjustment_writer.write()
 
     return ingest
 
-# Register custom trading calendar
-register_calendar('Binance_api', BinanceExchangeCalendar())
 ```
 ## Update Extension.py
 Last but not the least, we need to update ```$HOME/.zipline/extension.py```
@@ -198,7 +197,7 @@ from zipline.data.bundles.binance_api import api_to_bundle
 register(
     'binance_api',
     api_to_bundle(interval='1d'),
-    calendar_name='Binance_api',
+    calendar_name='Binance',
 )
 ```
 
@@ -363,11 +362,9 @@ def api_to_bundle(interval='1m'):
 
         asset_db_writer.write(equities=metadata)
         print(metadata)
+        adjustment_writer.write()
 
     return ingest
-
-# Register custom trading calendar
-register_calendar('Binance_api', BinanceExchangeCalendar())
 ```
 Here is a sample output.
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/binance_api_zipline_bundle_results.jpg" alt="binance api zipline custom bundle">

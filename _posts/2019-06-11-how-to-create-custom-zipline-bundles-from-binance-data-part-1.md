@@ -183,6 +183,7 @@ def csv_to_bundle(interval='1m'):
         
         asset_db_writer.write(equities=metadata)
         print(metadata)
+        adjustment_writer.write()
 
     return ingest
 ```
@@ -196,8 +197,6 @@ Fortunately, we don't have to write up our own 24/7 calendar from scratch. We ju
 from datetime import time
 
 from trading_calendars import TradingCalendar
-from trading_calendars import register_calendar
-from zipline.utils.memoize import lazyval
 
 
 class BinanceExchangeCalendar(TradingCalendar):
@@ -214,6 +213,33 @@ class BinanceExchangeCalendar(TradingCalendar):
     )
 
 ```
+In the same directory, we need to edit ```calendar_utils.py``` as well.
+```python
+...
+from .exchange_calendar_binance import BinanceExchangeCalendar  # Add this line
+...
+_default_calendar_factories = {
+    # Exchange calendars.
+    'BVMF': BVMFExchangeCalendar,
+    'CMES': CMESExchangeCalendar,
+...
+    # Miscellaneous calendars.
+    'BINANCE': BinanceExchangeCalendar,  # Add this line
+    'us_futures': QuantopianUSFuturesCalendar,
+    '24/7': AlwaysOpenCalendar,
+    '24/5': WeekdayCalendar,
+}
+...
+_default_calendar_aliases = {
+    'NYSE': 'XNYS',
+    'NASDAQ': 'XNYS',
+...
+    'NYFE': 'IEPA',
+    'CFE': 'XCBF',
+    'Binance': 'BINANCE',  # Add this line
+}
+```
+
 ## Put-it-all-together
 Let us put all together for ```binance_csv.py```.  The source code can be found on [my github](https://github.com/0xboz/zipline_bundle) as well.
 
@@ -401,6 +427,7 @@ def csv_to_bundle(reload_tickers=True, reload_csv=True, interval='1m'):
         
         asset_db_writer.write(equities=metadata)
         print(metadata)
+        adjustment_writer.write()
 
     return ingest
 ```
@@ -412,7 +439,7 @@ from zipline.data.bundles.binance_csv import csv_to_bundle
 register(
     'binance_csv',
     csv_to_bundle(interval='1d'), # Daily ('1d') or Minute ('1m') Data
-    calendar_name='Binance_csv',
+    calendar_name='Binance',
 )
 
 ```
