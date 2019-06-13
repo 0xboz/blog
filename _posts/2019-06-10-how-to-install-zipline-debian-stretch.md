@@ -73,4 +73,10 @@ First, go to the zipline package folder. If you have followed this tutorial alon
 
 Fire up your favorite text editor and replace 'uint32' with 'uint64' in those two files: ```us_equity_pricing.py``` and ```minute_bars.py```
 
+> autobahn 19.6.2 has requirement cryptography>=2.7, but you'll have cryptography 2.3.1 wich is incompatible.
+
+```
+(zipline) pip install  cryptography==2.7
+```
+
 I will try to update more known Zipline issues and their solutions in the near future. Stay tuned and Ciao!
