@@ -28,7 +28,7 @@ import requests
 from trading_calendars import register_calendar
 from trading_calendars.exchange_calendar_binance import BinanceExchangeCalendar
 ```
-If you have followed my tutorials all along, you should have all packages installed already. BinanceExchangeCalendar is a custom trading calendar created in my tutorial [part 1](https://0xboz.github.io/blog/how-to-create-custom-zipline-bundles-from-binance-data-part-1/). Here is our Zipline installation on Debian 9 Stretch. Once you have all the pre-requisites in place, you can move onto the next step.
+If you have followed my tutorials all along, you should have all packages installed already. BinanceExchangeCalendar is a custom trading calendar created in my tutorial [part 1](https://0xboz.github.io/blog/how-to-create-custom-zipline-bundles-from-binance-data-part-1/). Here is [our Zipline installation on Debian 9 Stretch](https://0xboz.github.io/blog/how-to-install-zipline-debian-stretch/). Once you have all the pre-requisites in place, you can move onto the next step.
 
 ## Get Binance Trading Pair Tickers
 Now, let us set up some variables.
