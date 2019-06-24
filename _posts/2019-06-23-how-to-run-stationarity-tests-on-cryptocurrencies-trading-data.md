@@ -3,6 +3,8 @@ title: "How to Run Stationarity Tests on Cryptocurrencies Trading Data"
 date: 2019-06-23
 tags: [Catalyst, Stationarity, Augmented Dickey-Fuller (ADF) Test, Phillips-Perron (PP) Test, Kwiatkowski-Phillips-Schmidt-Shin (KPSS) Test]
 excerpt: "Identify Stationary Data for Crypto Trading"
+header:
+    image: /assets/images/skyline.jpg
 ---
 
 Before you start creating models and testing stratgies, you need to identify the stationarity in any time-series analysis. 
