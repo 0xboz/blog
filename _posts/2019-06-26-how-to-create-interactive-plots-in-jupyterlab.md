@@ -76,5 +76,7 @@ ax1.plot(perf.index, perf.price, label='BTC/USDT')
 fig.legend()
 plt.show()
 ```
-If everyting works, you should see the following.
+If everyting works, you should see the interactive plot of bitcoin price from 2017/11/01 to 2018/11/01.
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/interactive_plots_jupyterlab.png" alt="interactive plots in jupyterlab">
+
+That is all for this post. I hope you find something useful in it, and let me know if you have any questions/comments. Ciao!
