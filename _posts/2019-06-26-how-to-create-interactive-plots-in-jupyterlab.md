@@ -7,7 +7,7 @@ header:
     image: /assets/images/black_and_white_chart_cost.jpg
 ---
 
-This post is going to be fairly straight-forward. If you have followed my previous post, we should have a virtual environment with Catalyst ready.
+This post is going to be fairly straight-forward. If you have followed my previous [post](https://0xboz.github.io/blog/how-to-install-catalyst-debian-stretch/), we should have a virtual environment with [Catalyst](https://enigma.co/catalyst/index.html) ready.
 
 ## Install Node.js
 You can easily install Node.js from the NodeSource [repository](https://github.com/nodesource/distributions). Since adding extra repo into Debian is not really recommended by security freaks like me, I would suggest an alternavtive method through npm. Open the terminal
