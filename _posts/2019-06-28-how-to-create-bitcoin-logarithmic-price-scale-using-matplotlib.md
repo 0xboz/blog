@@ -82,7 +82,11 @@ Just in case you would like to run it on minute data, don't forget to run this c
 (venv) catalyst ingest-exchange -x bitfinex -f minute -i btc_usd
 ```
 Okay, now let us go back to our coding cell and run the script by ```Shift + Enter``` or ```Ctrl + Enter```. If you happen to see the following, meaning we can move onto the next step - plotting!
+
+<figure style="width:1200px">
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/run_catalyst_algo.png" alt="run catalyst algo">
+</figure>
+
 ## Matplotlib
 Since we have already imported matplotlib, let us jump right into plotting this time.
 ```python
@@ -119,9 +123,10 @@ axv.bar(perf.index, perf.volume, color='#0079a3', alpha=0.4)
 plt.grid(False)
 plt.setp(axv.get_yticklabels(), visible=False)
 ```
-<figure style='width: 1200px'>
+<figure style="width:1200px">
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_regular_price_chart.png" alt="bitcoin regular price chart">
 </figure>
+
 Thanks to matplotlib, it is quite easy convert price to logarithmic scale from the code above. 
 ```python
 # Log Price Chart
@@ -148,7 +153,9 @@ plt.grid(False)
 plt.setp(ax1v.get_yticklabels(), visible=False)
 ```
 Here is what it looks like.
+<figure style="width:1200px">
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_log_price_chart.png" alt="bitcoin log price chart">
+</figure>
 
 As a bonus, let us re-visit the discussion about [Stationarity and Differencing on crypto trading data](https://0xboz.github.io/blog/how-to-run-stationarity-tests-on-cryptocurrencies-trading-data/). The code below is going to generate daily log return time series chart.
 ```python
@@ -166,7 +173,10 @@ plt.grid(which='minor')
 xfmt = mdates.DateFormatter('%d-%m-%y')
 ax2.xaxis.set_major_formatter(xfmt)
 ``` 
+<figure style="width:1200px">
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_daily_log_return.png" alt="bitcoin daily log return">
+</figure>
+
 From the chart above, we can observe the mean and variance are relatively constant over time. In the upcoming post, I will cover how to utilize this data with integration of order zero *I(0)* for our trading model.
 
 We still need a few more lines of code to adjust those sub plots.
