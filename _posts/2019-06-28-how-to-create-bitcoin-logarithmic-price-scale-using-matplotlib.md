@@ -77,7 +77,7 @@ Awesome! But before we run our algo, we need to ingest the data first.
 ```
 (venv) catalyst ingest-exchange -x bitfinex -f daily -i btc_usd
 ```
-In case, you would like to run it on minute data. Don't forget to run this command.
+Just in case you would like to run it on minute data, don't forget to run this command.
 ```
 (venv) catalyst ingest-exchange -x bitfinex -f minute -i btc_usd
 ```
