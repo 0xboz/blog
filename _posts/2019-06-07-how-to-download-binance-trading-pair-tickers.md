@@ -71,4 +71,4 @@ Make the file excutable and run the command
 (venv) python get_binance_tickers.py
 ```
 
-Before we are going to use 'binance_ticker_pairs.pickle' and retrieve trading data through Binance public API, I will discuss how to install Zipline in the next tutorial.
+Before we are going to use 'binance_ticker_pairs.pickle' and retrieve trading data through Binance public API, I will discuss [how to install Zipline in the next tutorial](https://0xboz.github.io/blog/how-to-install-zipline-debian-stretch/). I also created a ```QUANT CHANNEL``` on one of the most popular crypto servers (Ripple XRP). Feel like stopping by and say hi? We have tons of down-to-earth folks who have been in crypto-verse for a long time. Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/jchMcc2). 

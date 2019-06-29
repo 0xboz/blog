@@ -79,4 +79,4 @@ plt.show()
 If everyting works, you should see the interactive plot of bitcoin price from 2017/11/01 to 2018/11/01.
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/interactive_plots_jupyterlab.png" alt="interactive plots in jupyterlab">
 
-That is all for this post. I hope you find something useful in it, and let me know if you have any questions/comments. Ciao!
+That is all for this post. I hope you find something useful in it, and let me know if you have any questions/comments. I also created a ```QUANT CHANNEL``` on one of the most popular crypto servers (Ripple XRP). Feel like stopping by and say hi? We have tons of down-to-earth folks who have been in crypto-verse for a long time. Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/jchMcc2). Ciao!

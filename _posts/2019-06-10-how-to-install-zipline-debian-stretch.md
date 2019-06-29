@@ -79,4 +79,4 @@ Fire up your favorite text editor and replace 'uint32' with 'uint64' in those tw
 (zipline) pip install  cryptography==2.7
 ```
 
-I will try to update more known Zipline issues and their solutions in the near future. Stay tuned and Ciao!
+I will try to update more known Zipline issues and their solutions in the near future. I also created a ```QUANT CHANNEL``` on one of the most popular crypto servers (Ripple XRP). Feel like stopping by and say hi? We have tons of down-to-earth folks who have been in crypto-verse for a long time. Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/jchMcc2). Stay tuned and Ciao!

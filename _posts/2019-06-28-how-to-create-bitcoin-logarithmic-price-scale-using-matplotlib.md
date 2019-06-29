@@ -165,7 +165,7 @@ xfmt = mdates.DateFormatter('%d-%m-%y')
 ax2.xaxis.set_major_formatter(xfmt)
 ``` 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_daily_log_return.png" alt="bitcoin daily log return">
-From the chart above, we can observe the mean and variance are relatively constant over time. In the upcoming post, I will cover how to utilize this data with integration of oreder zero *I(0)* for our trading model.
+From the chart above, we can observe the mean and variance are relatively constant over time. In the upcoming post, I will cover how to utilize this data with integration of order zero *I(0)* for our trading model.
 
 We still need a few more lines of code to adjust those sub plots.
 ```python
@@ -173,5 +173,7 @@ plt.subplots_adjust(left=0.1, bottom=0.05, right=0.94, top=0.96, wspace=0.2, hsp
 plt.show()
 ```
 
-Send me a message if you have any questions/comments. Stay calm and happy trading!
+Send me a message if you have any questions/comments. I also created a ```QUANT CHANNEL``` on one of the most popular crypto servers (Ripple XRP). Feel like stopping by and say hi? We have tons of down-to-earth folks who have been in crypto-verse for a long time. Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/jchMcc2). 
+
+Stay calm and happy trading!
 
