@@ -119,7 +119,7 @@ axv.bar(perf.index, perf.volume, color='#0079a3', alpha=0.4)
 plt.grid(False)
 plt.setp(axv.get_yticklabels(), visible=False)
 ```
-<figure style='width: 1200'>
+<figure style='width: 1200px'>
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_regular_price_chart.png" alt="bitcoin regular price chart">
 </figure>
 Thanks to matplotlib, it is quite easy convert price to logarithmic scale from the code above. 
