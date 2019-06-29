@@ -83,7 +83,7 @@ Just in case you would like to run it on minute data, don't forget to run this c
 ```
 Okay, now let us go back to our coding cell and run the script by ```Shift + Enter``` or ```Ctrl + Enter```. If you happen to see the following, meaning we can move onto the next step - plotting!
 
-<figure style="width:1200px">
+<figure>
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/run_catalyst_algo.png" alt="run catalyst algo">
 </figure>
 
@@ -123,7 +123,7 @@ axv.bar(perf.index, perf.volume, color='#0079a3', alpha=0.4)
 plt.grid(False)
 plt.setp(axv.get_yticklabels(), visible=False)
 ```
-<figure style="width:1200px">
+<figure style="width:960px">
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_regular_price_chart.png" alt="bitcoin regular price chart">
 </figure>
 
@@ -153,7 +153,7 @@ plt.grid(False)
 plt.setp(ax1v.get_yticklabels(), visible=False)
 ```
 Here is what it looks like.
-<figure style="width:1200px">
+<figure style="width:960px">
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_log_price_chart.png" alt="bitcoin log price chart">
 </figure>
 
@@ -173,7 +173,7 @@ plt.grid(which='minor')
 xfmt = mdates.DateFormatter('%d-%m-%y')
 ax2.xaxis.set_major_formatter(xfmt)
 ``` 
-<figure style="width:1200px">
+<figure style="width:960px">
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_daily_log_return.png" alt="bitcoin daily log return">
 </figure>
 
