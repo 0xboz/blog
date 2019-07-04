@@ -4,7 +4,7 @@ date: 2019-06-07
 tags: [Binance, Requests, BeautifulSoup]
 excerpt: "A simple python script to download all Binance trading pair tickers"
 header:
-    image: /assets/images/architecture_buildings_city.jpg.jpg
+    image: /assets/images/architecture_buildings_city.jpg
 ---
 I am planning to create custom data bundles for [Zipline](http://www.zipline.io/). [Binance](https://www.binance.com/) is the leading crypto exchange as of this writing and it provides massive trading data via its [public API](https://github.com/binance-exchange/binance-official-api-docs). A series of upcoming tutorials will dive deep into crypto data bundles for Zipline.
 
