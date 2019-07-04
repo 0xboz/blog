@@ -380,8 +380,12 @@ for df in df_list:
 <figure style="width:960px">
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/biweekly_btc_data_mean_std.png" alt="bitcoin biweekly log price rolling mean and standard deviation chart">
 </figure>
+
+<!-- <figure style="width:960px"> -->
 <figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/monthly_btc_data_mean_std.png" alt="bitcoin monthly log price rolling mean and standard deviation chart">
+    <a href="/assets/images/monthly_btc_data_mean_std.png"><img src="/assets/images/monthly_btc_data_mean_std.png"></a>
+    <!-- <img src="{{ site.url }}{{ site.baseurl }}/assets/images/monthly_btc_data_mean_std.png" alt="bitcoin monthly log price rolling mean and standard deviation chart"> -->
+    <!-- <figcaption>bitcoin monthly log price rolling mean and standard deviation chart</figcaption> -->
 </figure>
 
 Visually speaking, it is quite obvious that our price data is not stationary.
