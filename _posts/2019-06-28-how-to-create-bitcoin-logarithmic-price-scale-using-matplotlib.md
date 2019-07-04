@@ -84,7 +84,10 @@ Just in case you would like to run it on minute data, don't forget to run this c
 Okay, now let us go back to our coding cell and run the script by ```Shift + Enter``` or ```Ctrl + Enter```. If you happen to see the following, meaning we can move onto the next step - plotting!
 
 <figure>
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/run_catalyst_algo.png" alt="run catalyst algo">
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/run_catalyst_algo.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/run_catalyst_algo.png">
+    </a>
+    <figcaption>Run catalyst algo</figcaption>
 </figure>
 
 ## Matplotlib
@@ -123,8 +126,12 @@ axv.bar(perf.index, perf.volume, color='#0079a3', alpha=0.4)
 plt.grid(False)
 plt.setp(axv.get_yticklabels(), visible=False)
 ```
-<figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_regular_price_chart.png" alt="bitcoin regular price chart">
+
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_regular_price_chart.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_regular_price_chart.png">
+    </a>
+    <figcaption>Bitcoin regular price chart</figcaption>
 </figure>
 
 Thanks to matplotlib, it is quite easy convert price to logarithmic scale from the code above. 
@@ -153,8 +160,11 @@ plt.grid(False)
 plt.setp(ax1v.get_yticklabels(), visible=False)
 ```
 Here is what it looks like.
-<figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_log_price_chart.png" alt="bitcoin log price chart">
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_log_price_chart.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_log_price_chart.png">
+    </a>
+    <figcaption>Bitcoin log price chart</figcaption>
 </figure>
 
 As a bonus, let us re-visit the discussion about [Stationarity and Differencing on crypto trading data](https://0xboz.github.io/blog/how-to-run-stationarity-tests-on-cryptocurrencies-trading-data/). The code below is going to generate daily log return time series chart.
@@ -173,8 +183,11 @@ plt.grid(which='minor')
 xfmt = mdates.DateFormatter('%d-%m-%y')
 ax2.xaxis.set_major_formatter(xfmt)
 ``` 
-<figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_daily_log_return.png" alt="bitcoin daily log return">
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_daily_log_return.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/bitcoin_daily_log_return.png">
+    </a>
+    <figcaption>Bitcoin daily log return</figcaption>
 </figure>
 
 From the chart above, we can observe the mean and variance are relatively constant over time. In the upcoming post, I will cover how to utilize this data with integration of order zero *I(0)* for our trading model.
