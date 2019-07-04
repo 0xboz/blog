@@ -4,7 +4,7 @@ date: 2019-06-10
 tags: [Zipline, Debian, Conda]
 excerpt: "Zipline installation on Debian 9 (Stretch)"
 header:
-    image: /assets/images/close-up-green-leaf.jpg
+    image: /assets/images/close_up_green_leaf.jpg
 ---
 
 Apparently, we need to install Zipline first before we can test our trading ideas. There are many tutorials to teach you how to install Zipline in a variety of ways. In this post, I am going to show you my installation on Debian 9 Stretch.

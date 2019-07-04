@@ -4,7 +4,7 @@ date: 2019-07-04
 tags: [ARIMA, Bitcoin, Python]
 excerpt: "Create an ARIMA Model forecasting BTCUSD movement in Python Part 1"
 header:
-    image: /assets/images/architecture-bridge-brooklyn-bridge.jpg
+    image: /assets/images/architecture_bridge_brooklyn_bridge.jpg
 ---
 In my previous posts, we have discussed [stationarity tests](https://0xboz.github.io/blog/how-to-run-stationarity-tests-on-cryptocurrencies-trading-data/) on crypto trading data. In this upcoming series, we are going to explore how to implement Autoregressive Integrated Moving Average Model (ARIMA) into our crypto quantitative analysis.
 
