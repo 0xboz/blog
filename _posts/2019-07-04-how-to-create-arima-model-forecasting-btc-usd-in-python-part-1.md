@@ -309,17 +309,32 @@ Awesome. Let us use this function to run through our data frame list including d
 for df in df_list:
     make_log_price_chart(df)
 ```
-<figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_daily_log_history.png" alt="bitcoin daily log price chart">
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_daily_log_history.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_daily_log_history.png">
+    </a>
+    <figcaption>BTCUSD daily log price</figcaption>
 </figure>
-<figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_weekly_log_history.png" alt="bitcoin weekly log price chart">
+
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_weekly_log_history.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_weekly_log_history.png">
+    </a>
+    <figcaption>BTCUSD weekly log price</figcaption>
 </figure>
-<figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_biweekly_log_history.png" alt="bitcoin biweekly log price chart">
+
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_biweekly_log_history.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_biweekly_log_history.png">
+    </a>
+    <figcaption>BTCUSD bi-weekly log price</figcaption>
 </figure>
-<figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_monthly_log_history.png" alt="bitcoin monthly log price chart">
+
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_monthly_log_history.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_monthly_log_history.png">
+    </a>
+    <figcaption>BTCUSD monthly log price</figcaption>
 </figure>
 
 ## Stationarity Test
@@ -371,21 +386,33 @@ Let us run this test through our data frame list as well.
 for df in df_list:
     run_stationarity_test(df.price)
 ```
-<figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/daily_btc_data_mean_std.png" alt="bitcoin daily log price rolling mean and standard deviation chart">
-</figure>
-<figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/weekly_btc_data_mean_std.png" alt="bitcoin weekly log price rolling mean and standard deviation chart">
-</figure>
-<figure style="width:960px">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/biweekly_btc_data_mean_std.png" alt="bitcoin biweekly log price rolling mean and standard deviation chart">
+
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/daily_btc_data_mean_std.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/daily_btc_data_mean_std.png">
+    </a>
+    <figcaption>BTCUSD daily log price rolling mean and standard deviation</figcaption>
 </figure>
 
-<!-- <figure style="width:960px"> -->
 <figure>
-    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/monthly_btc_data_mean_std.png"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/monthly_btc_data_mean_std.png"></a>
-    <!-- <img src="{{ site.url }}{{ site.baseurl }}/assets/images/monthly_btc_data_mean_std.png" alt="bitcoin monthly log price rolling mean and standard deviation chart"> -->
-    <!-- <figcaption>bitcoin monthly log price rolling mean and standard deviation chart</figcaption> -->
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/weekly_btc_data_mean_std.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/weekly_btc_data_mean_std.png">
+    </a>
+    <figcaption>BTCUSD weekly log price rolling mean and standard deviation</figcaption>
+</figure>
+
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/biweekly_btc_data_mean_std.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/biweekly_btc_data_mean_std.png">
+    </a>
+    <figcaption>BTCUSD bi-weekly log price rolling mean and standard deviation</figcaption>
+</figure>
+
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/monthly_btc_data_mean_std.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/monthly_btc_data_mean_std.png">
+    </a>
+    <figcaption>BTCUSD monthly log price rolling mean and standard deviation</figcaption>    
 </figure>
 
 Visually speaking, it is quite obvious that our price data is not stationary.
