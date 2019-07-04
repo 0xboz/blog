@@ -322,4 +322,75 @@ for df in df_list:
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/btc_usd_monthly_log_history.png" alt="bitcoin monthly log price chart">
 </figure>
 
+## Stationarity Test
+Apparently, our price data is not stationary. But before we perform any data transformation and differencing, we can create a simple stationarity test function (You might have noticed this function is a bit similar to the one mentioned in [one of my previous posts](https://0xboz.github.io/blog/how-to-run-stationarity-tests-on-cryptocurrencies-trading-data/)) for later use.
+```python
+def run_stationarity_test(time_series, window=10):
+    """
+    This window here is a bit arbitrary.
+    After all, rolling average is just a visual technique to verify the stationarity.
+    """
+    sns.set(style="darkgrid")
+    #Determing rolling statistics
+    rolmean = time_series.rolling(window=window).mean()
+    rolstd = time_series.rolling(window=window).std()
+
+    #Plot rolling statistics:
+    fig = plt.figure(figsize=(27, 5))
+    orig = plt.semilogy(time_series, color='blue',label='Original', lw=0.75, alpha=0.7)
+    mean = plt.semilogy(rolmean, color='red', label='Rolling Mean', lw=1)
+    std = plt.semilogy(rolstd, color='black', label = 'Rolling Std', lw=1)
+    plt.legend(loc='best')
+    
+    if 'Day' in str(time_series.index.freq):
+        freq = 'Daily'
+    elif 'Week: weekday=6' in str(time_series.index.freq):
+        freq = 'Weekly'
+    elif '2 * Weeks: weekday=6' in str(time_series.index.freq):
+        freq = 'Bi-weekly'
+    elif 'MonthEnd' in str(time_series.index.freq):
+        freq = 'Monthly'
+    
+    plt.title('{} Data Rolling Mean & Standard Deviation'.format(freq), fontsize=20)
+    plt.yticks(fontsize=14)
+    plt.xticks(fontsize=14, rotation=0)
+    plt.show()    
+    
+    #Perform ADF test:
+    first_valid_date = time_series.first_valid_index()    
+    print('Results of ADF Test:')
+    dftest = adfuller(time_series.loc[first_valid_date:], autolag='AIC')
+    dfoutput = pd.Series(dftest[0:4], index=['Test Statistic','p-value','#Lags Used','Number of Observations Used'])
+    for key,value in dftest[4].items():
+        dfoutput['Critical Value (%s)'%key] = value
+    print(dfoutput)
+```
+
+Let us run this test through our data frame list as well.
+```python
+for df in df_list:
+    run_stationarity_test(df.price)
+```
+<figure style="width:960px">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/daily_btc_data_mean_std.png" alt="bitcoin daily log price rolling mean and standard deviation chart">
+</figure>
+<figure style="width:960px">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/weekly_btc_data_mean_std.png" alt="bitcoin weekly log price rolling mean and standard deviation chart">
+</figure>
+<figure style="width:960px">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/biweekly_btc_data_mean_std.png" alt="bitcoin biweekly log price rolling mean and standard deviation chart">
+</figure>
+<figure style="width:960px">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/monthly_btc_data_mean_std.png" alt="bitcoin monthly log price rolling mean and standard deviation chart">
+</figure>
+
+Visually speaking, it is quite obvious that our price data is not stationary.
+
+According to [Augmented Dickey-Fuller (ADF)](https://en.wikipedia.org/wiki/Augmented_Dickey%E2%80%93Fuller_test) test, when ```p-value``` is greater than 0.05, we can not reject the null hypothesis that the series has a unit root. In other words, the price time series is not stationary.
+
+Usually, we can just take the natural log of the price and be done with it, but I am going to show you another general yet powerful tool called [Box-Cox Transformation](https://en.wikipedia.org/wiki/Power_transform#Box%E2%80%93Cox_transformation) in the upcoming series. Meanwhile, if you have any questions/comments/proposals, feel free to shoot me a message.
+
+I have also created one [QUANT channel](https://discord.gg/jchMcc2) in one of the most popular discords in cryptoverse. Stop by and say hi to those down-to-earth crypto folks.
+
+Stay calm and happy trading!
 
