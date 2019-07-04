@@ -367,6 +367,12 @@ def api_to_bundle(interval='1m'):
     return ingest
 ```
 Here is a sample output.
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/binance_api_zipline_bundle_results.jpg" alt="binance api zipline custom bundle">
+
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/binance_api_zipline_bundle_results.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/binance_api_zipline_bundle_results.png">
+    </a>
+    <figcaption>Binance API Zipline custom bundle</figcaption>
+</figure>
 
 Again, you can also find the source code on my [github](https://github.com/0xboz/zipline_bundle) as always. I hope you have enjoyed my tutorials so far. Shoot me a message if you have questions and comments. I also created a ```QUANT CHANNEL``` on one of the most popular crypto servers (Ripple XRP). Feel like stopping by and say hi? We have tons of down-to-earth folks who have been in crypto-verse for a long time. Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/jchMcc2). Ciao!
