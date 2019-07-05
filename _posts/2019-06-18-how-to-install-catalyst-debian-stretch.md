@@ -3,6 +3,8 @@ title: "How to Install Catalyst on Debian 9 Stretch"
 date: 2019-06-18
 tags: [Catalyst, Debian]
 excerpt: "Catalyst installation on Debian 9 (Stretch)"
+header:
+    image: /assets/images/mountain_dawn.jpg
 ---
 [Catalyst](https://enigma.co/catalyst/index.html), a fork of [Zipline](http://www.zipline.io/), is an algorithmic trading library for crypto-assets.
 
