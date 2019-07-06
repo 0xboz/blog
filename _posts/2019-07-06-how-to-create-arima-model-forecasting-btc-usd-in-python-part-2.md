@@ -75,7 +75,7 @@ for df in df_list:
 ```
 <div class="notice--info">
     <p>A <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/probplot.htm">probability plot</a> (a sample vs a theoretical distribution) is not a <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/qqplot.htm">QQ-plot</a>. A QQ-plot compares two samples. Although many resources are contradicting with NIST definition, plotting a sample is essentially the same as using the empirical distribution function.</p>
-    <p>nevertheless, we are plotting one dsitribution's quantiles against another.</p>
+    <p>Nevertheless, we are plotting one dsitribution's quantiles against another.</p>
     <p>A more thorough discussion can be found on <a href="https://stackoverflow.com/questions/13865596/quantile-quantile-plot-using-scipy">stackoverflow</a>.</p>
 </div>
 
