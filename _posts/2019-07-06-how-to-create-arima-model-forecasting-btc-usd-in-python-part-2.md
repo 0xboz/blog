@@ -412,4 +412,4 @@ render_results(d_df, params=(6, 1, 0))
 
 I wish our results could be more accurate. Oh, well...
 
-This might be the end of our series. We could explore a bit further by incoporating the seasonality into our model, and I will see if I can put up another post on that topic in the near future. I hope you have enjoyed this series, and please do not forget to chekc out [our quant channel](https://discord.gg/jchMcc2). Shoot me a message if you have any questions/comments/proposals. Ciao!  
+This might be the end of our series. We could explore a bit further by incoporating the seasonality into our model, and I will see if I can put up another post on that topic in the near future. I hope you have enjoyed this series, and please do not forget to check out [our quant channel](https://discord.gg/jchMcc2). Feel free to shoot me a message if you have any questions/comments/proposals. Ciao!  
