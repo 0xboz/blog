@@ -146,6 +146,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/0xboz"
+    - label: "Newsletter"
+      icon: "fas fa-fw fa-envelope-open-text"
+      url: "http://eepurl.com/gxmy39"  
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
