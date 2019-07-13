@@ -116,7 +116,7 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       # url: mailto:your.name@email.com
     - label: "Website"
-      icon: "fas fa-fw fa-link"
+      icon: "fas fa-fw fa-home"
       url: "https://0xboz.github.io"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
@@ -127,6 +127,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/0xboz"
+    - label: "Newsletter"
+      icon: "fab fa-fw fa-envelope-open-text"
+      url: "http://eepurl.com/gxmy39"      
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
