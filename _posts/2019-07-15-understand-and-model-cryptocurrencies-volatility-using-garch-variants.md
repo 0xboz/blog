@@ -143,9 +143,9 @@ However, the downside of this method is incredibly noisy.
 
 Another commonly accepted approach is called *realized volatility (RV)*, coined by Bollershev. Basically, the summation of squared intraday returns aggregated to the daily level can be used to measure that day's variance. For instance, if we have BTCUSD minute data, its daily variance can be estimated as follows:
 
-\begin{equation*}
+$$ \begin{equation*}
 RV_{d_{j+1}} = \sum_{i = 1}^{1440} r_{t_{i + 1440(j+1)}}^2 
-\end{equation*}
+\end{equation*} $$
 
 Here is how we implement it in Python.
 
@@ -167,9 +167,9 @@ timestamp
 
 Another common interval to calculate RV is 5-min data interval. Of course, the formula mentioned above will be re-written like this.
 
-\begin{equation*}
+$$ \begin{equation*}
 RV_{d_{j+1}} = \sum_{i = 1}^{288} r_{t_{i + 288(j+1)}}^2 
-\end{equation*}
+\end{equation*} $$
 
 ```python
 # Resample to 5-min data
@@ -204,8 +204,3 @@ timestamp
 ```
 
 ### Updating...
-
-
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
