@@ -203,4 +203,35 @@ timestamp
 2017-04-05 00:00:00+00:00	1130.486875	15.630853	7.030404	-0.011690	-0.011759	0.000138	-1.168997	-1.175883	0.000380	0.019500
 ```
 
+Some simple configurations for our charts.
+
+```python
+import warnings
+warnings.simplefilter('ignore')
+
+%matplotlib inline
+# Increase chart resolution
+%config InlineBackend.figure_format = 'retina'
+import seaborn as sns
+
+sns.set_style('darkgrid')
+sns.mpl.rcParams['figure.figsize'] = (20.0, 4.0)
+sns.mpl.rcParams['savefig.dpi'] = 150
+sns.mpl.rcParams['font.family'] = 'serif'
+sns.mpl.rcParams['font.size'] = 12
+sns.mpl.rcParams['lines.linewidth'] = 1.3
+```
+While we are at it, let us plot those three and take a look.
+
+```python
+ax1 = d_df.loc[:, ['squared_log_return', 'realized_variance_1min', 'realized_variance_5min']].plot()
+ax1.xaxis.label.set_visible(False)
+```
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/estimated_daily_variance.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/estimated_daily_variance.png">
+    </a>
+    <figcaption>BTCUSD estimated daily variance</figcaption>
+</figure>
+
 ### Updating...
