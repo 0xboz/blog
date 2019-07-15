@@ -97,15 +97,10 @@ The following is cited from [Wikipedia](https://en.wikipedia.org/wiki/Volatility
 > In finance, volatility (symbol σ) is the degree of variation of a trading price series over time as measured by the standard deviation of logarithmic returns.
 
 We can arrive at the mathematical definiton with ease.
-$$ \sigma = \sqrt{\frac{1}{n-1}\sum_{i=1}^n(\bar{r} - r_i)^2} $$
 
 $$ \begin{equation*}
 \sigma = \sqrt{\frac{1}{n-1}\sum_{i=1}^n(\bar{r} - r_i)^2}
 \end{equation*} $$
-
-$$\begin{equation*}
-\sigma = \sqrt{\frac{1}{n-1}\sum_{i=1}^n(\bar{r} - r_i)^2}
-\end{equation*}$$
 
 Where,   
 \\sigma\ is volatility,      
