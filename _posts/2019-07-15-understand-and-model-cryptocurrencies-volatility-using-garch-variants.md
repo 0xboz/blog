@@ -103,12 +103,10 @@ $$ \begin{equation*}
 \end{equation*} $$
 
 Where,   
-\\sigma\ is volatility, 
-\($\sigma$\) is volatility,    
 $$\sigma$$ is volatility,  
-$\bar{r}$ is mean log return,  
-$r_i$ is the log return at time i,  
-$n$ is the number of log return observations.
+$$\bar{r}$$ is mean log return,  
+$$r_i$$ is the log return at time i,  
+$$n$$ is the number of log return observations.
 
 ## Daily Volatility & Variance
 
