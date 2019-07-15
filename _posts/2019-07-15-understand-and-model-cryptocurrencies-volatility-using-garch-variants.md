@@ -239,17 +239,20 @@ As expected, the realized variance plots are visually smoother than squared log 
 ## Evaluation
 There are three commonly accepted criteria to evalute a variety of models in financial area - Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE) and Root Mean Square Error (RMSE). 
 
-#### Mean Absolute Error (MAE)
+#### Mean Absolute Error (MAE)  
+
 $$ \begin{equation*}
 MAE = \frac{\sum_{i=1}^n|y_i - x_i|}{n}
 \end{equation*} $$
 
-#### Mean Absolute Percentage Error (MAPE)
+#### Mean Absolute Percentage Error (MAPE)  
+
 $$ \begin{equation*}
 MAPE = \frac{100}{n}\sum_{t=1}^n|\frac{A_t - F_t}{A_t}|
 \end{equation*} $$
 
-#### Root Mean Square Error (RMSE)
+#### Root Mean Square Error (RMSE)  
+
 $$ \begin{equation*}
 RMSE = \sqrt{\frac{\sum_{i=1}^n(x_{obs,i} - y_{model,i})^2}{n}}
 \end{equation*} $$ 
