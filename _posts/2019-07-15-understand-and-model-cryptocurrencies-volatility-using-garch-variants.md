@@ -234,4 +234,66 @@ ax1.xaxis.label.set_visible(False)
     <figcaption>BTCUSD estimated daily variance</figcaption>
 </figure>
 
+As expected, the realized variance plots are visually smoother than squared log return plot, especially around January 2018.
+
+## Evaluation
+There are three commonly accepted criteria to evalute a variety of models in financial area - Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE) and Root Mean Square Error (RMSE). 
+
+#### Mean Absolute Error (MAE)
+$$ \begin{equation*}
+MAE = \frac{\sum_{i=1}^n|y_i - x_i|}{n}
+\end{equation*} $$
+
+#### Mean Absolute Percentage Error (MAPE)
+$$ \begin{equation*}
+MAPE = \frac{100}{n}\sum_{t=1}^n|\frac{A_t - F_t}{A_t}|
+\end{equation*} $$
+
+#### Root Mean Square Error (RMSE)
+$$ \begin{equation*}
+RMSE = \sqrt{\frac{\sum_{i=1}^n(x_{obs,i} - y_{model,i})^2}{n}}
+\end{equation*} $$ 
+
+By definition, it is quite obvious that the smaller values calculated by those methods, the better performance of our model of interest. It is fairly easy to implement those criteria in Python as well.
+
+```python
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+from math import sqrt
+
+def mae(observation, forecast):    
+    error = mean_absolute_error(observation, forecast)
+    print('Mean Absolute Error (MAE): {:.3g}'.format(error))
+    return error
+
+def mape(observation, forecast): 
+    observation, forecast = np.array(observation), np.array(forecast)
+    # Might encounter division by zero error when observation is zero
+    error = np.mean(np.abs((observation - forecast) / observation)) * 100
+    print('Mean Absolute Percentage Error (MAPE): {:.3g}'.format(error))
+    return error
+
+def rmse(observation, forecast):
+    error = sqrt(mean_squared_error(observation, forecast))
+    print('Root Mean Square Error (RMSE): {:.3g}'.format(error))
+    return error
+
+def evaluate(pd_dataframe, observation, forecast):
+    """
+    :params
+    :pd_dataframe pandas dataframe
+    :observation column name of expected values
+    :forecast column name of forecasted values
+    :return the results of MAE, MAPE and RMSE, respectively
+    """
+    first_valid_date = pd_dataframe[forecast].first_valid_index()
+    mae_error = mae(pd_dataframe[observation].loc[first_valid_date:, ], pd_dataframe[forecast].loc[first_valid_date:, ])
+    mape_error = mape(pd_dataframe[observation].loc[first_valid_date:, ], pd_dataframe[forecast].loc[first_valid_date:, ])
+    rmse_error = rmse(pd_dataframe[observation].loc[first_valid_date:, ], pd_dataframe[forecast].loc[first_valid_date:, ]) 
+
+    ax = pd_dataframe.loc[:, [observation, forecast]].plot()
+    ax.xaxis.label.set_visible(False)
+    
+    return mae_error, mape_error, rmse_error
+```
+
 ### Updating...
