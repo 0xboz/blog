@@ -9,7 +9,7 @@ header:
 
 I had a difficult time to understand GARCH and its variants. In this post, I am going to show you what I have come across while learning and experimenting on this topic. If you are well-versed in this area, please do keep reading and point out the mistakes in this piece. Hopefully, it will help someone in the future.
 
-We are going to use BTCUSD as an example for the rest of this article. Feel free to try the following techniques on other cryptocurrencies pairs. Shoot me a message ([Patreon](https://www.patreon.com/0xboz), [Discord](https://discord.gg/jchMcc2) or [Twitter](https://twitter.com/0xboz)) and let me know what you have found.
+We are going to use BTCUSD as an example for the rest of this article. Feel free to try the following techniques on other cryptocurrencies pairs. Shoot me a message on [Patreon](https://www.patreon.com/0xboz), [Discord](https://discord.gg/jchMcc2) or [Twitter](https://twitter.com/0xboz) and let me know what you have found.
 
 
 ## Data
@@ -298,11 +298,13 @@ def evaluate(pd_dataframe, observation, forecast):
     
     return mae_error, mape_error, rmse_error
 ```
-<div class="notice">
+
+## Exponentially Weighted Moving Average (EWMA)
+
+<div class="notice--success">
   <p>Exponentially Weighted Moving Average (EWMA) is simply introduced here to help understanding ARCH. However, we not going for a deep dive other than deriving a few equations. You may skip this session.</p>
 </div>
 
-## Exponentially Weighted Log Return Moving Average
 One simple way of estimating future volatility is to use historical weighted volatilities. The assumption is that the further we go back in time, the less impact the previous volatility has on the future. Since this method simply chooses a constant rate over time, it is hard to miss that exponential decreasing pattern on the chart.
 
 Before we can move forward, we need to simplify the equation from the volatility definition. When we have a larger number of observations and relatively smaller time window (i.e. daily data), it is safe to assume $n-1 \approx n$ and $(\bar{r} - r_i)^2 \approx r_i^2$. If we take it a bit further by squaring both sides, we get this.
