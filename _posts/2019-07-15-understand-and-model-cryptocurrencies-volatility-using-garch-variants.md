@@ -11,6 +11,7 @@ I had a difficult time to understand GARCH and its variants. In this post, I am 
 
 We are going to use BTCUSD as an example for the rest of this article. Feel free to try the following techniques on other cryptocurrencies pairs. Shoot me a message on [Patreon](https://www.patreon.com/0xboz), [Discord](https://discord.gg/jchMcc2) or [Twitter](https://twitter.com/0xboz) and let me know what you have found.
 
+You might also like to [sign up for my newsletter](http://eepurl.com/gxmy39) and stay tuned with the latest articles.
 
 ## Data
 
