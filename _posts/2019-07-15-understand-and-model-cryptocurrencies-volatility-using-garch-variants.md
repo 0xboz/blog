@@ -337,5 +337,61 @@ $$ \begin{equation*}
 \alpha_{i+1} = \lambda\alpha_i
 \end{equation*} $$
 
+## Autoregressive Conditional Heteroskedasticity (ARCH)
+
+[In our previous posts](https://0xboz.github.io/blog/how-to-create-arima-model-forecasting-btc-usd-in-python-part-2/), we have developed autoregressive models for univariate time series data that is stationary (AR), has a trend (ARIMA), and has a seasonal component (SARIMA). All of these models assume the data has a constant variance over time. However, financial markets and crypto trading data are exposed to consistent changes of the variance in time series - volatility.
+
+Moderate changes in variance can be easily dealt with the power transformation, such as natural log and Box-Cox transformation. When the variance is largely time-dependent, the autoregressive process is introduced to treat the data.
+
+> In a nutshell, ARCH models the variance at a time step as a function of the residual errors from a mean process (e.g. a zero mean). 
+
+In other words, AR model is applied to the variance of a time series. 
+
+<div class="notice--info">
+  <p>ARCH is only applicable where the time series is stationary, other than the change in variance, meaning it does not have a trend or seasonal component. </p>
+</div>
+
+Similar to the equation mentioned in EWMA, $\alpha_0$, $\alpha_1$ ... and $\alpha_q$ are considered as the parameters of the model instead of the weights.
+
+\begin{equation*}
+Var(r_t | r_{t-1}, r_{t-2}, ..., r_{t-p}) 
+= \alpha_0 + \alpha_1r_{t-1}^2 + \alpha_2r_{t-2}^2 + ... + \alpha_pr_{t-p}^2
+\end{equation*}
+
+> ```p```: The number of lag residual errors to include in the ARCH model.
+
+Normally, researchers will start with ARIMA model to select the best combination of the parameters based on the lowest score of AIC, BIC or HQIC as we have discussed in a [previous post](https://0xboz.github.io/blog/how-to-create-arima-model-forecasting-btc-usd-in-python-part-2/).
+
+> The configuration for an ARCH model is best understood in the context of ACF and PACF plots of the variance of the time series. This can be achieved by subtracting the mean from each observation in the series and squaring the result, or just squaring the observation if you’re already working with white noise residuals from another model.  - [Jason Brownlee at Machine Learning Mastery](https://machinelearningmastery.com/develop-arch-and-garch-models-for-time-series-forecasting-in-python/)
+
+For the sake of this post, let us assume the mean log return is zero over time and run autocorrelations on those squared observations.
+
+```python
+from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
+_ = plot_acf(d_df['squared_log_return'][1:], lags=100, title='Squared Daily Log Return ACF')
+_ = plot_acf(d_df['realized_volatility_1min'][1:], lags=100, title='1-min Daily Realized Variance ACF')
+_ = plot_acf(d_df['realized_volatility_5min'][1:], lags=100, title='5-min Daily Realized Variance ACF')
+```
+
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/squared_daily_log_return_acf.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/squared_daily_log_return_acf.png">
+    </a>
+    <figcaption>BTCUSD squared daily log return ACF</figcaption>
+</figure>
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/1_min_daily_realized_variance_acf.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/1_min_daily_realized_variance_acf.png">
+    </a>
+    <figcaption>BTCUSD 1-min daily realized variance ACF</figcaption>
+</figure>
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/5_min_daily_realized_variance_acf.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/5_min_daily_realized_variance_acf.png">
+    </a>
+    <figcaption>BTCUSD 5-min daily realized variance ACF</figcaption>
+</figure>
+
+In case of squared log return, we have a positive correlation up to 62 lag time steps. On the other hand, the realized variance (both 1-min and 5-min) ACF correlograms have showed a positive correlation till 46 lag time steps. Since realized variance is generally considered as a more accurate estimate of the true variance, we are going to set the lag as 46.
 
 ### Updating...
