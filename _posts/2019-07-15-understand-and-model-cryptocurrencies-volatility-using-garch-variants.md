@@ -298,5 +298,42 @@ def evaluate(pd_dataframe, observation, forecast):
     
     return mae_error, mape_error, rmse_error
 ```
+<div class="notice">
+  <p>Exponentially Weighted Moving Average (EWMA) is simply introduced here to help understanding ARCH. However, we not going for a deep dive other than deriving a few equations. You may skip this session.</p>
+</div>
+
+## Exponentially Weighted Log Return Moving Average
+One simple way of estimating future volatility is to use historical weighted volatilities. The assumption is that the further we go back in time, the less impact the previous volatility has on the future. Since this method simply chooses a constant rate over time, it is hard to miss that exponential decreasing pattern on the chart.
+
+Before we can move forward, we need to simplify the equation from the volatility definition. When we have a larger number of observations and relatively smaller time window (i.e. daily data), it is safe to assume $n-1 \approx n$ and $(\bar{r} - r_i)^2 \approx r_i^2$. If we take it a bit further by squaring both sides, we get this.
+
+$$ \begin{equation*}
+\sigma_t^2 = \frac{1}{n}\sum_{i=1}^nr_{t-i}^2
+\end{equation*} $$
+
+<div class="notice--info">
+  <p>The added subscript $t$ means today's volatility.</p>
+</div>
+
+In other words, the variance of log return is the average of all squared log returns within the observation window $n$. However, this form simply allows the even contribution from all previous log returns. The next step is to implement ```exponentially weighted``` approach by introducing lambda $\lambda$.
+
+$$ \begin{equation*}
+\sigma_t^2 = \frac{\lambda^0r_{t-1}^2 + \lambda^1r_{t-2}^2 + \lambda^2r_{t-3}^2 + ... + \lambda^{n-1}r_{t-n}^2}{\lambda^0 + \lambda^1 + \lambda^2 + ... + \lambda^{n-1}}
+\end{equation*} $$
+
+The above equation can also be written like this.
+
+$$ \begin{equation*}
+\sigma_t^2 = \sum_{i=1}^n\alpha_ir_{t-i}^2
+\end{equation*} $$
+
+$$ \begin{equation*}
+\sum_{i=1}^n\alpha_i = 1 
+\end{equation*} $$
+
+$$ \begin{equation*}
+\alpha_{i+1} = \lambda\alpha_i
+\end{equation*} $$
+
 
 ### Updating...
