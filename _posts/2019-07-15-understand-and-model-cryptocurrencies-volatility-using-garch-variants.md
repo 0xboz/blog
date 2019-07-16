@@ -353,12 +353,12 @@ In other words, AR model is applied to the variance of a time series.
 
 Similar to the equation mentioned in EWMA, $\alpha_0$, $\alpha_1$ ... and $\alpha_q$ are considered as the parameters of the model instead of the weights.
 
-\begin{equation*}
+$$ \begin{equation*}
 Var(r_t | r_{t-1}, r_{t-2}, ..., r_{t-p}) 
 = \alpha_0 + \alpha_1r_{t-1}^2 + \alpha_2r_{t-2}^2 + ... + \alpha_pr_{t-p}^2
-\end{equation*}
+\end{equation*} $$
 
-> ```p```: The number of lag residual errors to include in the ARCH model.
+> $p$: The number of lag residual errors to include in the ARCH model.
 
 Normally, researchers will start with ARIMA model to select the best combination of the parameters based on the lowest score of AIC, BIC or HQIC as we have discussed in a [previous post](https://0xboz.github.io/blog/how-to-create-arima-model-forecasting-btc-usd-in-python-part-2/).
 
