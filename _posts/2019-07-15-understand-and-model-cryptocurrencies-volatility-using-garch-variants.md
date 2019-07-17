@@ -403,7 +403,7 @@ Notice that we have only used squared log returns to estimate the variance so fa
 
 $$ \begin{equation*}
 Var(y_t | y_{t-1}, y_{t-2}, ..., y_{t-q}, \sigma_{t-1}, \sigma_{t-2}, ..., \sigma_{t-p}) 
-= \alpha_0 + \alpha_1y_{t-1}^2 + \alpha_2y_{t-2}^2 + ... + \alpha_py_{t-q}^2 + 
+\\= \alpha_0 + \alpha_1y_{t-1}^2 + \alpha_2y_{t-2}^2 + ... + \alpha_py_{t-q}^2 + 
 \beta_0 + \beta_1\sigma_{t-1}^2 + \beta_2\sigma_{t-2}^2 + ... + \beta_p\sigma_{t-p}^2
 \end{equation*} $$
 
@@ -414,7 +414,7 @@ Var(y_t | y_{t-1}, y_{t-2}, ..., y_{t-q}, \sigma_{t-1}, \sigma_{t-2}, ..., \sigm
   <p>PAY ATTENTION TO NAME CONVENTIONS. $p$ in ARCH(p) specifies the number of lag residual errors, while $p$ in GARCH(p, q) is for the number of lag variances.</p>
 </div>
 
-### Exponential Generalized Autoregressive Conditional Heteroscedasticity (EGARCH)
+## Exponential Generalized Autoregressive Conditional Heteroscedasticity (EGARCH)
 
 Although there are thousands of academic papers and published books which focus on studying different volatility models in financial industry, we can find few studies to discuss the correlations between the existing forecasting models and cryptocurrencies markets. Interestingly, EGARCH seems to perform better than GARCH and its other variants over all, according to [Naimy](https://www.inderscienceonline.com/doi/abs/10.1504/IJMMNO.2018.088994) and [Zheng](https://medium.com/coinmonks/a-systematic-review-of-forecasting-the-cryptocurrency-volatility-using-garch-model-d1855c9779c).
 
