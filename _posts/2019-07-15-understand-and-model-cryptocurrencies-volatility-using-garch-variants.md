@@ -432,4 +432,246 @@ $$ \begin{equation*}
 
 where $e_{t}=\epsilon_{t}/\sigma_{t}$
 
-### Updating...
+## ```ARCH``` Python Package
+
+```python
+from arch import arch_model
+```
+[```ARCH```](https://github.com/bashtage/arch) is a package written in Python (with Cython and/or Numba used to improve performance). As discussed in [ARCH official document](https://arch.readthedocs.io/en/latest/univariate/univariate_volatility_forecasting.html), there are four types of forecasting schemes (basic, fixed window, rolling window and recursive forecasting) at our disposal. I am going to demonstrate how to implement 3 out of those 4 schemes via ARCH, GARCH and EGARCH.
+
+```python
+model_in_sample = arch_model(d_df['log_return'][1:], mean='Zero', vol='ARCH', p=1, dist='t')
+res_in_sample = model_in_sample.fit(disp='off')
+```
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/arch_covergence_warning.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/arch_covergence_warning.png">
+    </a>
+    <figcaption>ARCH covergence warning</figcaption>
+</figure>
+
+You might encounter an error message like the one above - "ConvergenceWarning". Recall we scale up 100x of the log return? This is because ARCH package cannot handle small numbers by defaut. We either scale up our data or re-adjust the default value.
+
+```python
+# Scale up 100x
+model_in_sample = arch_model(d_df['log_return_100x'][1:], mean='Zero', vol='ARCH', p=1, dist='t')
+res_in_sample = model_in_sample.fit(disp='off')
+```
+Alternatively, we can pass in some options in the ```fit()``` function.
+
+```python
+model_in_sample = arch_model(d_df['log_return'][1:], mean='Zero', vol='ARCH', p=1, dist='t')
+# Pass in options
+# 'ftol' is 1e-06 by defaut
+# Re-adjust to 1e-01 for our data
+res_in_sample = model_in_sample.fit(disp='off', options={'ftol': 1e-01})
+```
+Let us just stay with passing in ```ftol``` value for the rest of this tutorial. Feel free to experiment with the scaling up option.
+
+#### Fixed Window Forecasting
+We can use a fixed window forecasting scheme in ```ARCH``` package and see what happens.
+
+> Fixed-windows forecasting uses data up to a specified date to generate all forecasts after that date.   
+
+The nice part of this scheme is that we can pass the entire data set when initializing the model. We just need to provide the last observation timestamp when calling ```fit()``` function. The following ```forecast()``` function will, by default, produce forecasts after that timestamp.
+
+We can create a simple function to run ARCH, GARCH and EGARCH all together.
+
+```python
+def fixed_window_forecast(pd_dataframe):
+    models = ['ARCH', 'GARCH', 'EGARCH']
+    for model in models:
+        mod = arch_model(pd_dataframe['log_return'][1:], mean='Zero', vol=model, dist='t')
+        res = mod.fit(disp='off', last_obs=356, options={'ftol': 1e-01})
+        forecasts = res.forecast()
+        pd_dataframe['fixed_window_{}'.format(model)] = forecasts.variance['h.1']
+        print('------------------------------------------------')
+        print('Fixed Window Forcasting {}'.format(model))
+        evaluate(pd_dataframe, 'realized_variance_1min', 'fixed_window_{}'.format(model))
+
+fixed_window_forecast(d_df)
+```
+```
+------------------------------------------------
+Fixed Window Forcasting ARCH
+Mean Absolute Error (MAE): 0.00123
+Mean Absolute Percentage Error (MAPE): 3.11e+06
+Root Mean Square Error (RMSE): 0.00148
+------------------------------------------------
+Fixed Window Forcasting GARCH
+Mean Absolute Error (MAE): 0.000637
+Mean Absolute Percentage Error (MAPE): 8.48e+05
+Root Mean Square Error (RMSE): 0.00122
+------------------------------------------------
+Fixed Window Forcasting EGARCH
+Mean Absolute Error (MAE): 0.000582
+Mean Absolute Percentage Error (MAPE): 3.88e+05
+Root Mean Square Error (RMSE): 0.00125
+```
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/fixed_window_arch.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/fixed_window_arch.png">
+    </a>
+    <figcaption>Fixed window forecasting ARCH</figcaption>
+</figure>
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/fixed_window_garch.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/fixed_window_garch.png">
+    </a>
+    <figcaption>Fixed window forecasting GARCH</figcaption>
+</figure>
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/fixed_window_egarch.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/fixed_window_egarch.png">
+    </a>
+    <figcaption>Fixed window forecasting EGARCH</figcaption>
+</figure>
+
+#### Rolling Window Forecasting
+In addition, we can also adopt a rolling window scheme and check if there is any improvement.
+> Rolling window forecasts use a fixed sample length and then produce one-step from the final observation.
+
+Basically, the model generates one-step ahead forecast and drops the oldest daily log return while including the newest daily return for a re-fit. Similarly, we will have a simple function to run ARCH, GARCH and EGARCH all together.
+
+```python
+def rolling_window_forecast(pd_dataframe):     
+
+    # Set rolling window
+    window = 365
+    
+    models = ['ARCH', 'GARCH', 'EGARCH']
+    for model in models:
+
+        index = d_df[1:].index
+        end_loc = np.where(index >= d_df.index[window])[0].min()
+        forecasts = {}
+        for i in range(len(d_df[1:]) - window + 2):  
+            mod = arch_model(pd_dataframe['log_return'][1:], mean='Zero', vol=model, dist='t')
+            res = mod.fit(first_obs=i, last_obs=i+end_loc, disp='off', options={'ftol': 1e03})
+            temp = res.forecast().variance
+            fcast = temp.iloc[i + end_loc - 1]
+            forecasts[fcast.name] = fcast
+
+        forecasts = pd.DataFrame(forecasts).T
+        pd_dataframe['rolling_window_{}'.format(model)] = forecasts['h.1']
+        
+        print('------------------------------------------------')
+        print('Rolling Window Forcasting {}'.format(model))
+        evaluate(pd_dataframe, 'realized_variance_1min', 'rolling_window_{}'.format(model))
+rolling_window_forecast(d_df)
+```
+
+```
+------------------------------------------------
+Rolling Window Forcasting ARCH
+Mean Absolute Error (MAE): 0.000858
+Mean Absolute Percentage Error (MAPE): 1.52e+06
+Root Mean Square Error (RMSE): 0.00121
+------------------------------------------------
+Rolling Window Forcasting GARCH
+Mean Absolute Error (MAE): 0.000616
+Mean Absolute Percentage Error (MAPE): 6.41e+05
+Root Mean Square Error (RMSE): 0.00117
+------------------------------------------------
+Rolling Window Forcasting EGARCH
+Mean Absolute Error (MAE): 0.00058
+Mean Absolute Percentage Error (MAPE): 3.5e+05
+Root Mean Square Error (RMSE): 0.00126
+```
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/rolling_window_arch.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/rolling_window_arch.png">
+    </a>
+    <figcaption>Rolling window forecasting ARCH</figcaption>
+</figure>
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/rolling_window_garch.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/rolling_window_garch.png">
+    </a>
+    <figcaption>Rolling window forecasting GARCH</figcaption>
+</figure>
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/rolling_window_egarch.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/rolling_window_egarch.png">
+    </a>
+    <figcaption>Rolling window forecasting EGARCH</figcaption>
+</figure>
+
+#### Recursive Forecast Generation
+There is one more forecasting scheme provided by ```ARCH``` package.
+> Recursive is similar to rolling except that the initial observation doesn’t change. This can be easily implemented by dropping the ```first_obs``` input.
+
+```python
+def recursive_forecast(pd_dataframe):     
+
+    # Set rolling window
+    window = 365
+    
+    models = ['ARCH', 'GARCH', 'EGARCH']
+    for model in models:
+
+        index = d_df[1:].index
+        end_loc = np.where(index >= d_df.index[window])[0].min()
+        forecasts = {}
+        for i in range(len(d_df[1:]) - window + 2):  
+            mod = arch_model(pd_dataframe['log_return'][1:], mean='Zero', vol=model, dist='t')
+            res = mod.fit(last_obs=i+end_loc, disp='off', options={'ftol': 1e03})
+            temp = res.forecast().variance
+            fcast = temp.iloc[i + end_loc - 1]
+            forecasts[fcast.name] = fcast
+
+        forecasts = pd.DataFrame(forecasts).T
+        pd_dataframe['recursive_{}'.format(model)] = forecasts['h.1']
+        
+        print('------------------------------------------------')
+        print('Recursive Forcasting {}'.format(model))
+        evaluate(pd_dataframe, 'realized_variance_1min', 'recursive_{}'.format(model))
+
+recursive_forecast(d_df)
+```
+
+```
+------------------------------------------------
+Recursive Forcasting ARCH
+Mean Absolute Error (MAE): 0.000867
+Mean Absolute Percentage Error (MAPE): 1.69e+06
+Root Mean Square Error (RMSE): 0.00121
+------------------------------------------------
+Recursive Forcasting GARCH
+Mean Absolute Error (MAE): 0.000583
+Mean Absolute Percentage Error (MAPE): 6.49e+05
+Root Mean Square Error (RMSE): 0.00117
+------------------------------------------------
+Recursive Forcasting EGARCH
+Mean Absolute Error (MAE): 0.000546
+Mean Absolute Percentage Error (MAPE): 3.15e+05
+Root Mean Square Error (RMSE): 0.00116
+```
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/recursive_arch.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/recursive_arch.png">
+    </a>
+    <figcaption>Recursive forecasting ARCH</figcaption>
+</figure>
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/recursive_garch.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/recursive_garch.png">
+    </a>
+    <figcaption>Recursive forecasting GARCH</figcaption>
+</figure>
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/recursive_egarch.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/recursive_egarch.png">
+    </a>
+    <figcaption>Recursive forecasting EGARCH</figcaption>
+</figure>
+
+EGARCH has outperformed the other two in all 3 forecasting schemes based on MAE, MAPE, and RMSE
+
+## The End
+
+I hope you have enjoyed this piece. My apologies for this long post. There are a couple of other directions we could have pursued further. For instance, ```simulation``` and ```bootstrap``` are two methods which could be implemented in EGARCH for out-of-sample forecasting. It would be very interesting to see the simulation paths from their results. I guess those exciting challenges will be left to our readers who are eager to investigate further.
+
+Again, thank you for your time and patience. All source code will be uploaded to my github. Let me know if you have any questions/comments/proposals. My contact information can be found at the beginning of this post. 
+
+Stay calm and happy trading!
