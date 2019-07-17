@@ -672,6 +672,6 @@ EGARCH has outperformed the other two in all 3 forecasting schemes based on MAE,
 
 I hope you have enjoyed this piece. My apologies for this long post. There are a couple of other directions we could have pursued further. For instance, ```simulation``` and ```bootstrap``` are two methods which could be implemented in EGARCH for out-of-sample forecasting. It would be very interesting to see the simulation paths from their results. I guess those exciting challenges will be left to our readers who are eager to investigate further.
 
-Again, thank you for your time and patience. All source code will be uploaded to my github. Let me know if you have any questions/comments/proposals. My contact information can be found at the beginning of this post. 
+Again, thank you for your time and patience. All source code will be uploaded to [my github](https://github.com/0xboz/forecast_cryptocurrencies_volatility_garch_variants/tree/master). Let me know if you have any questions/comments/proposals. My contact information can be found at the beginning of this post. 
 
 Stay calm and happy trading!
