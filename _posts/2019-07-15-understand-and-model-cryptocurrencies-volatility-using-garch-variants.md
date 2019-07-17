@@ -666,7 +666,7 @@ Root Mean Square Error (RMSE): 0.00116
     <figcaption>Recursive forecasting EGARCH</figcaption>
 </figure>
 
-EGARCH has outperformed the other two in all 3 forecasting schemes based on MAE, MAPE, and RMSE
+EGARCH has outperformed the other two in all 3 forecasting schemes based on MAE, MAPE, and RMSE.
 
 ## The End
 
