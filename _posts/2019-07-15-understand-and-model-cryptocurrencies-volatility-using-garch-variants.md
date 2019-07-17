@@ -395,4 +395,41 @@ _ = plot_acf(d_df['realized_volatility_5min'][1:], lags=100, title='5-min Daily 
 
 In case of squared log return, we have a positive correlation up to 62 lag time steps. On the other hand, the realized variance (both 1-min and 5-min) ACF correlograms have showed a positive correlation till 46 lag time steps. Since realized variance is generally considered as a more accurate estimate of the true variance, we are going to set the lag as 46.
 
+Or is it? I have tried this lag. However, the evaluation errors are much larger than those using ARCH package default value. I could not figure out why. If you are having the same issue, please do let me know. And of course, if you know the solution, I am all ears! 
+
+## Generalized Autoregressive Conditional Heteroskedasticity (GARCH)
+
+Notice that we have only used squared log returns to estimate the variance so far. If we take one step further by incorporating previous variances into the model, we will get the following.
+
+$$ \begin{equation*}
+Var(y_t | y_{t-1}, y_{t-2}, ..., y_{t-q}, \sigma_{t-1}, \sigma_{t-2}, ..., \sigma_{t-p}) 
+= \alpha_0 + \alpha_1y_{t-1}^2 + \alpha_2y_{t-2}^2 + ... + \alpha_py_{t-q}^2 + 
+\beta_0 + \beta_1\sigma_{t-1}^2 + \beta_2\sigma_{t-2}^2 + ... + \beta_p\sigma_{t-p}^2
+\end{equation*} $$
+
+> $p$: The number of lag variances to include in the GARCH model.  
+> $q$: The number of lag residual errors to include in the GARCH model.
+
+<div class="notice--warning">
+  <p>PAY ATTENTION TO NAME CONVENTIONS. $p$ in ARCH(p) specifies the number of lag residual errors, while $p$ in GARCH(p, q) is for the number of lag variances.</p>
+</div>
+
+### Exponential Generalized Autoregressive Conditional Heteroscedasticity (EGARCH)
+
+Although there are thousands of academic papers and published books which focus on studying different volatility models in financial industry, we can find few studies to discuss the correlations between the existing forecasting models and cryptocurrencies markets. Interestingly, EGARCH seems to perform better than GARCH and its other variants over all, according to [Naimy](https://www.inderscienceonline.com/doi/abs/10.1504/IJMMNO.2018.088994) and [Zheng](https://medium.com/coinmonks/a-systematic-review-of-forecasting-the-cryptocurrency-volatility-using-garch-model-d1855c9779c).
+
+Exponential Generalized Autoregressive Conditional Heteroscedasticity (EGARCH) is a variant of GARCH. It integrated the asymmetric influence on volatility from both positive and negative impacts by introducing natural log on the variable of interest. There was an empirical belief that the negative factors can perform stronger volatility than positive factors, even with the same absolute value. The practice of asymmetry volatility was further confirmed by the famous Leverage Effect Theory proposed by Black in 1976 "*Studies in Stock Price Volatility Change*". Negative values are allowed in EGARCH, while conditional variance is positive. 
+
+In ```ARCH``` package, EGARCH variance dynamics are
+
+$$ \begin{equation*}
+\ln\sigma_{t}^{2}=\omega
++\sum_{i=1}^{p}\alpha_{i}
+\left(\left|e_{t-i}\right|-\sqrt{2/\pi}\right)
++\sum_{j=1}^{o}\gamma_{j} e_{t-j}
++\sum_{k=1}^{q}\beta_{k}\ln\sigma_{t-k}^{2}
+\end{equation*} $$
+
+where $e_{t}=\epsilon_{t}/\sigma_{t}$
+
 ### Updating...
