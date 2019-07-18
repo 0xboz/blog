@@ -51,7 +51,7 @@ $ echo $?
 ```
 > A return value of 0 indicates success. Ordinarily a nonzero return indicates what kind of error occurred
 
-What if we change ```return 0``` to ```return -1```? ()
+What if we change ```return 0``` to ```return -1```? 
 
 <div class="notice--info">
   <p>This question is cited from Lippman's book.</p>
