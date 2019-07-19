@@ -63,6 +63,8 @@ In my case, it returns ```255```.
 ## Hello, World!
 How could we go on without this most influential one?! Interestingly enough, C++ language itself does not take care of statements for input or output (IO). An extensive standard library is introduced to manage this task (and many others as well). Here is our code.
 
+> Exercise 1.3: Write a program to print Hello, World on the standard output.
+
 ```cpp
 /* 
  * Exercise 1.3: Write a program to print Hello, World on the standard output. 
@@ -82,6 +84,8 @@ int main()
 ## More Exercises
 The best way to learn a programming language is to code. Here are some solutions to the exercises from the book.
 
+>  Exercise 1.4: Our program used the addition operator, +, to add two numbers. Write a program that uses the multiplication operator, *, to print the product instead.
+
 ```cpp
 /*
  * Exercise 1.4: Our program used the addition operator, +, to add two
@@ -99,6 +103,8 @@ int main()
     return 0;
 }
 ```
+
+>  Exercise 1.5: We wrote the output in one large statement. Rewrite the program to use a separate statement to print each operand.
 
 ```cpp
 /*
@@ -122,6 +128,7 @@ int main()
     return 0;
 }
 ```
+> Exercise 1.6: Explain whether the following program fragment is legal.
 
 ```cpp
 /*
@@ -155,6 +162,8 @@ ex1.6.cpp:9:9: error: expected primary-expression before ‘<<’ token
 ```
 Let us take a look at the solutions of some exercises. 
 
+> Exercise 1.9: Write a program that uses a while to sum the numbers from 50 to 100.
+
 ```cpp
 /*
  * Exercise 1.9: Write a program that uses a while to sum the numbers from 50 to 100.
@@ -172,6 +181,7 @@ int main()
     return 0;
 }
 ```
+> Exercise 1.10: In addition to the ++ operator that adds 1 to its operand, there is a decrement operator (--) that subtracts 1. Use the decrement operator to write a while that prints the numbers from ten down to zero.
 
 ```cpp
 /*
@@ -191,6 +201,8 @@ int main()
     return 0;
 }
 ```
+
+> Exercise 1.11: Write a program that prompts the user for two integers. Print each number in the range specified by those two integers.
 
 ```cpp
 /*
@@ -225,6 +237,8 @@ int main()
 
 ### ```for``` Statement
 
+> Exercise 1.16: Write your own version of a program that prints the sum of a set of integers read from cin.
+
 ```cpp
 /*
  * Exercise 1.16: Write your own version of a program that prints the sum of
@@ -240,6 +254,61 @@ int main()
     for (int val = 0; std::cin >> val; sum += val) {
     }
     std::cout << "\nThe sum is " << sum << std::endl;
+    return 0;
+}
+```
+
+### ```if``` Statement
+
+> Exercise 1.19: Revise the program you wrote for the exercises in § 1.4.1 (p. 13) that printed a range of numbers so that it handles input in which the first number is smaller than the second.
+
+```cpp
+/*
+ * Exercise 1.19: Revise the program you wrote for the exercises in § 1.4.1 (p.
+ * 13) that printed a range of numbers so that it handles input in which the first
+ * number is smaller than the second.
+ *
+ * Here is the original excercise.
+ * Exercise 1.11: Write a program that prompts the user for two integers.
+ * Print each number in the range specified by those two integers.
+ *
+ */
+#include <iostream>
+
+int main()
+{
+    std::cout << "Please enter two numbers: " << std::endl;
+    int val1 = 0, val2 = 0;
+    std::cin >> val1 >> val2;
+
+    // Assume we do not know "if" statement
+    // while (val1 < val2) {
+    //     std::cout << val1 << std::endl;
+    //     ++val1;
+    // };
+    // while (val2 < val1) {
+    //     std::cout << val2 << std::endl;
+    //     ++val2;
+    // };
+    // while (val1 == val2) {
+    //     std::cout << val2 << std::endl;
+    //     ++val1;
+    // };
+
+    // Implement "if" statement
+    if (val1 <= val2) {
+        while (val1 <= val2) {
+            std::cout << val1 << std::endl;
+            ++val1;
+        }
+    }
+    else {
+        while (val2 <= val1) {
+            std::cout << val2 << std::endl;
+            ++val2;
+        }
+    };
+
     return 0;
 }
 ```
