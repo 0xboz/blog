@@ -145,4 +145,82 @@ As to Excercise 1.6, the answer is *not legal*.
 ex1.6.cpp:9:9: error: expected primary-expression before ‘<<’ token
 ```
 
+## Flow of Control
+
+### ```while``` Statement
+
+```
+    while (condition)
+        statement
+```
+Let us take a look at the solutions of some exercises. 
+
+```cpp
+/*
+ * Exercise 1.9: Write a program that uses a while to sum the numbers from 50 to 100.
+ */
+#include <iostream>
+
+int main()
+{
+    int val = 50, sum = 0;
+    while (val <= 100) {
+        sum += val;
+        ++val;
+    }
+    std::cout << "The sum from 50 to 100 is " << sum << std::endl;
+    return 0;
+}
+```
+
+```cpp
+/*
+ * Exercise 1.10: In addition to the ++ operator that adds 1 to its operand,
+ * there is a decrement operator (--) that subtracts 1. Use the decrement
+ * operator to write a while that prints the numbers from ten down to zero.
+ */
+#include <iostream>
+
+int main()
+{
+    int val = 10;
+    while (val >= 0) {
+        std::cout << "Count down " << val << std::endl;
+        --val;
+    };
+    return 0;
+}
+```
+
+```cpp
+/*
+ * Exercise 1.11: Write a program that prompts the user for two integers.
+ * Print each number in the range specified by those two integers.
+ */
+#include <iostream>
+
+int main()
+{
+    std::cout << "Please enter two numbers: " << std::endl;
+    int val1 = 0, val2 = 0;
+    std::cin >> val1 >> val2;
+
+    // Assume we do not know "if" statement
+    while (val1 < val2) {
+        std::cout << val1 << std::endl;
+        ++val1;
+    };
+    while (val2 < val1) {
+        std::cout << val2 << std::endl;
+        ++val2;
+    };
+    while (val1 == val2) {
+        std::cout << val2 << std::endl;
+        ++val1;
+    };
+
+    return 0;
+}
+```
+
 ## Updating...
