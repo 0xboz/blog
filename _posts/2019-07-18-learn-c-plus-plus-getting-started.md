@@ -301,14 +301,12 @@ int main()
             std::cout << val1 << std::endl;
             ++val1;
         }
-    }
-    else {
+    } else {
         while (val2 <= val1) {
             std::cout << val2 << std::endl;
             ++val2;
         }
-    };
-
+    }
     return 0;
 }
 ```
