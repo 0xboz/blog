@@ -64,7 +64,9 @@ In my case, it returns ```255```.
 How could we go on without this most influential one?! Interestingly enough, C++ language itself does not take care of statements for input or output (IO). An extensive standard library is introduced to manage this task (and many others as well). Here is our code.
 
 ```cpp
-/* Exercise 1.3: Write a program to print Hello, World on the standard output. */
+/* 
+ * Exercise 1.3: Write a program to print Hello, World on the standard output. 
+ */
 #include <iostream>
 
 int main()
@@ -82,10 +84,10 @@ The best way to learn a programming language is to code. Here are some solutions
 
 ```cpp
 /*
-Exercise 1.4: Our program used the addition operator, +, to add two
-numbers. Write a program that uses the multiplication operator, *, to print
-the product instead.
-*/
+ * Exercise 1.4: Our program used the addition operator, +, to add two
+ * numbers. Write a program that uses the multiplication operator, *, to print
+ * the product instead.
+ */
 #include <iostream>
 
 int main()
@@ -100,9 +102,9 @@ int main()
 
 ```cpp
 /*
-Exercise 1.5: We wrote the output in one large statement. Rewrite the
-program to use a separate statement to print each operand.
-*/
+ * Exercise 1.5: We wrote the output in one large statement. Rewrite the
+ * program to use a separate statement to print each operand.
+ */
 #include <iostream>
 
 int main()
@@ -123,8 +125,8 @@ int main()
 
 ```cpp
 /*
-Exercise 1.6: Explain whether the following program fragment is legal.
-*/
+ * Exercise 1.6: Explain whether the following program fragment is legal.
+ */
 
 #include <iostream>
 
