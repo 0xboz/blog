@@ -127,7 +127,6 @@ int main()
 /*
  * Exercise 1.6: Explain whether the following program fragment is legal.
  */
-
 #include <iostream>
 
 int main()
@@ -141,7 +140,7 @@ int main()
     return 0;
 }
 ```
-As to Excercise 1.6, it is *not legal*.
+As to Excercise 1.6, the answer is *not legal*.
 ```
 ex1.6.cpp:9:9: error: expected primary-expression before ‘<<’ token
 ```
