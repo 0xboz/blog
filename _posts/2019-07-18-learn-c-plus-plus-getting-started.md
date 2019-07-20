@@ -311,4 +311,142 @@ int main()
 }
 ```
 
-## Updating...
+## Classes
+
+> Exercise 1.20: http://www.informit.com/title/032174113 contains a copy of Sales_item.h in the Chapter 1 code directory. Copy that file to your working directory. Use it to write a program that reads a set of book sales transactions, writing each transaction to the standard output.
+
+For your convenience, you can also download a copy from [my github](https://raw.githubusercontent.com/0xboz/learn_c_plus_plus/master/Sales_item.h). We have two options to solve this problem: ```while``` statement and ```for``` statement. Here is the code.
+
+```cpp
+/*
+ * Exercise 1.20: http://www.informit.com/title/032174113 contains a copy of
+ * Sales_item.h in the Chapter 1 code directory. Copy that file to your
+ * working directory. Use it to write a program that reads a set of book sales
+ * transactions, writing each transaction to the standard output.
+ */
+#include <iostream>
+#include "Sales_item.h"
+
+//  Solution with "while" statement
+int main()
+{
+    Sales_item book;
+    while(std::cin >> book){
+        std::cout << book << std::endl;
+    }
+    return 0;
+}
+
+// Alternative solution with "for" statement
+// int main()
+// {
+//     for (Sales_item book; std::cin >> book; std::cout << book << std::endl) {
+
+//     }
+//     return 0;
+// }
+```
+
+In addition, we can use file redirection to save tedious terminal typing.
+
+```
+$ YourCompiledProgram <infile >outfile
+```
+<div class="notice--info">
+  <p>Interestingly, the angle bracket ```<``` in file redirection is somehow opposite to ```cin``` and ```cout```. </p>
+</div>
+
+Here is my input file.
+```
+0-201-78345-X 3 20.00
+0-201-78145-X 2 25.00
+0-201-78845-X 7 16.00
+0-201-70353-X 4 24.99
+```
+And the output file is as follows.
+```
+0-201-78345-X 3 60 20
+0-201-78145-X 2 50 25
+0-201-78845-X 7 112 16
+0-201-70353-X 4 99.96 24.99
+```
+
+> Exercise 1.21: Write a program that reads two Sales_item objects that have the same ISBN and produces their sum.
+
+```cpp
+/*
+ * Exercise 1.21: Write a program that reads two Sales_item objects that
+ * have the same ISBN and produces their sum.
+ */
+#include <iostream>
+#include "Sales_item.h"
+
+int main()
+{
+    std::cout << "Enter two items with the same ISBN: " << std::endl;
+    Sales_item item1, item2;
+    std::cin >> item1 >> item2;
+    std::cout << item1 + item2 << std::endl;
+    return 0;
+}
+```
+
+> Exercise 1.22: Write a program that reads several transactions for the same ISBN . Write the sum of all the transactions that were read.
+
+```cpp
+/*
+ * Exercise 1.22: Write a program that reads several transactions for the same
+ * ISBN . Write the sum of all the transactions that were read.
+ */
+#include <iostream>
+#include "Sales_item.h"
+
+int main()
+{
+    std::cout << "Enter all transactions with the same ISBN: " << std::endl;
+    Sales_item total, entry;
+    while(std::cin >> entry){
+        total += entry;
+    };
+    std::cout << total << std::endl;
+    return 0;
+}
+```
+
+> Exercise 1.23: Write a program that reads several transactions and counts how many transactions occur for each ISBN.
+> Exercise 1.24: Test the previous program by giving multiple transactions representing multiple ISBN s. The records for each ISBN should be grouped together.
+
+```cpp
+/*
+ * Exercise 1.23: Write a program that reads several transactions and counts
+ * how many transactions occur for each ISBN.
+ *
+ * Exercise 1.24: Test the previous program by giving multiple transactions
+ * representing multiple ISBN s. The records for each ISBN should be grouped
+ * together.
+ */
+#include <iostream>
+#include "Sales_item.h"
+
+int main()
+{
+    Sales_item total;
+    if (std::cin >> total) {
+        Sales_item trans;
+        while (std::cin >> trans) {
+            if (total.isbn() == trans.isbn()) {
+                total += trans;
+            } else {
+                std::cout << total << std::endl;
+                total = trans;
+            }
+        }
+        std::cout << total << std::endl;
+    }
+    return 0;
+}
+```
+
+By now, we should be ready for a deep dive into C++ basics. All exercises and solutions are also available on [my github](https://github.com/0xboz/learn_c_plus_plus).
+
+Stay tuned by signing up for [my newsletter](http://eepurl.com/gxmy39). If you have any questions/comments/proposals, feel free to shoot me a message on [Twitter](https://twitter.com/0xboz)/[Discord](https://discord.gg/jchMcc2)/[Patreon](https://www.patreon.com/0xboz). Happy coding!
