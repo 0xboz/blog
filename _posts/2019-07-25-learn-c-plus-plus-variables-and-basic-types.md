@@ -11,7 +11,7 @@ header:
 *I have always been a fan of [C](https://en.wikipedia.org/wiki/C_(programming_language))/[C++](https://isocpp.org/) language family. Due to my education background, programming was never a focal point back then when I was in school. After a few hours of research on studying materials, I believe it is a great idea to document my journey of learning C++ as a beginner. Hopefully, this series will be helpful to those who are interested in learning C/C++ in the near future. This series is largely based on* __C++ Primer (5th Edition)__ *by [Stanley B. Lippman](https://en.wikipedia.org/wiki/Stanley_B._Lippman). It might be considered as some sort of study notes with a few tweaks from my personal preference.* 
 
 ### Learn C++: Table of Contents
-[Getting Started](https://0xboz.github.io/blog/learn-c-plus-plus-getting-started/)
+[Getting Started](https://0xboz.github.io/blog/learn-c-plus-plus-getting-started/)  
 Variables and Basic Types (*current post* - updating...)
 
 <div class="notice--info">
