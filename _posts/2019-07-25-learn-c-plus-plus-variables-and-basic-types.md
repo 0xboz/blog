@@ -4,8 +4,8 @@ date: 2019-07-18
 tags: [C++]
 excerpt: "C++ variables and basic types"
 header:
-    image: /assets/images/mac_book_black_and_white.jpg
-    caption: "Photo credit: [**Negative Space**](https://negativespace.co/)"
+    image: /assets/images/altitude_clouds_cold.jpg
+    caption: "Photo credit: [**Adrien Olichon**](https://adrienolichon.fr/)"
 ---
 
 *I have always been a fan of [C](https://en.wikipedia.org/wiki/C_(programming_language))/[C++](https://isocpp.org/) language family. Due to my education background, programming was never a focal point back then when I was in school. After a few hours of research on studying materials, I believe it is a great idea to document my journey of learning C++ as a beginner. Hopefully, this series will be helpful to those who are interested in learning C/C++ in the near future. This series is largely based on* __C++ Primer (5th Edition)__ *by [Stanley B. Lippman](https://en.wikipedia.org/wiki/Stanley_B._Lippman). It might be considered as some sort of study notes with a few tweaks from my personal preference.* 
