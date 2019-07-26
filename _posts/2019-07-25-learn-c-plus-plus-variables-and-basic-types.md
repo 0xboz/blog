@@ -180,6 +180,20 @@ p2 = p1;  // ok:
 p1 = p3;  // error: p3 has low-level const; low-level const doesn't match 
 p2 = p3;  // ok
 ```
+<div class="notice--info">
+  <p>Exercise 2.32: Is the following code legal or not? If not, how might you make it legal?</p>
+</div>
+
+```cpp
+int main()
+{
+    // int null = 0, *p = null;  // error: invalid conversion from ‘int’ to ‘int*’, type mismatch
+
+    // How to make it legal
+    int null = 0, *p = &null;
+    return 0;
+}
+```
 
 All exercises and solutions can be found on [my github](https://github.com/0xboz/learn_c_plus_plus).
 
