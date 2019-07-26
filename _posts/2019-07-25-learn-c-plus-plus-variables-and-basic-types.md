@@ -15,8 +15,66 @@ header:
 Variables and Basic Types (*current post* - updating...)
 
 <div class="notice--info">
+  <p>Exercise 2.1: What are the differences between int, long, long long, and short? Between an unsigned and a signed type? Between a float and a double?</p>
+</div>
+
+```cpp
+// int, long, long long, and short represent the integer values of different sizes, namely the number of bits in them.
+// A signed type represents negative or positive numbers (including zero); an unsigned type represents only values greater than or equal to zero.
+// The main difference between a float and a double lies in the precision. Typically, floats are represented in one word (32 bits) and doubles in two words (64 bits). In addition, the float and double types yield about 7 and 16 significant digits, respectively.
+```
+<div class="notice--info">
+  <p>Exercise 2.2: To calculate a mortgage payment, what types would you use for the rate, principal, and payment? Explain why you selected each type.</p>
+</div>
+
+```cpp
+// Rate: float
+// Principal: long
+// Payment: long
+// The rate is usually a floating-point number with 4 significant digits. The principal and payment are integral usually less than 1 billion.
+
+```
+<div class="notice--info">
+  <p>Exercise 2.3: What output will the following code produce?</p>
+</div>
+
+```cpp
+unsigned u = 10, u2 = 42;
+std::cout << u2 - u << std::endl;  // 32
+std::cout << u - u2 << std::endl;  // Depends on the machine; 4294967264 = 2^32 − 32
+int i = 10, i2 = 42;
+std::cout << i2 - i << std::endl;  // 32
+std::cout << i - i2 << std::endl;  // -32
+std::cout << i - u << std::endl;  //  0
+std::cout << u - i << std::endl;  //  0
+```
+<div class="notice--info">
+  <p>Exercise 2.4: Write a program to check whether your predictions were correct. If not, study this section until you understand what the problem is.</p>
+</div>
+
+```cpp
+#include <iostream>
+
+int main() 
+{
+  unsigned u = 10, u2 = 42;
+  std::cout << u2 - u << std::endl;  
+  std::cout << u - u2 << std::endl;  
+  
+  int i = 10, i2 = 42;
+  std::cout << i2 - i << std::endl; 
+  std::cout << i - i2 << std::endl; 
+  std::cout << i - u << std::endl;  
+  std::cout << u - i << std::endl;  
+
+  return 0;
+}
+```
+
+<div class="notice--info">
   <p>Exercise 2.26: Which of the following are legal? For those that are illegal,explain why.</p>
 </div>
+
 
 ```cpp
 // (a) 
