@@ -32,7 +32,6 @@ Variables and Basic Types (*current post* - updating...)
 // Principal: long
 // Payment: long
 // The rate is usually a floating-point number with 4 significant digits. The principal and payment are integral usually less than 1 billion.
-
 ```
 <div class="notice--info">
   <p>Exercise 2.3: What output will the following code produce?</p>
@@ -60,7 +59,7 @@ int main()
   unsigned u = 10, u2 = 42;
   std::cout << u2 - u << std::endl;  
   std::cout << u - u2 << std::endl;  
-  
+
   int i = 10, i2 = 42;
   std::cout << i2 - i << std::endl; 
   std::cout << i - i2 << std::endl; 
@@ -70,11 +69,9 @@ int main()
   return 0;
 }
 ```
-
 <div class="notice--info">
   <p>Exercise 2.26: Which of the following are legal? For those that are illegal,explain why.</p>
 </div>
-
 
 ```cpp
 // (a) 
