@@ -114,7 +114,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+      url: mailto:0xboz@hacari.com
     - label: "Website"
       icon: "fas fa-fw fa-home"
       url: "https://0xboz.github.io"
