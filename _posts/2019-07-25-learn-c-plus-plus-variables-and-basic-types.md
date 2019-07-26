@@ -1,6 +1,6 @@
 ---
 title: "Learn C++: Variables and Basic Types"
-date: 2019-07-18
+date: 2019-07-26
 tags: [C++]
 excerpt: "C++ variables and basic types"
 header:

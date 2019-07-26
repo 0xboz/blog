@@ -1,6 +1,6 @@
 ---
 title: "Learn C++: Getting Started"
-date: 2019-07-18
+date: 2019-07-25
 tags: [C++]
 excerpt: "Get started with C++"
 header:
