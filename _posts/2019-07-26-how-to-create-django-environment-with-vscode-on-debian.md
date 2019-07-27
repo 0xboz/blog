@@ -2,7 +2,7 @@
 title: "How to Create Django Environment With Visual Studio Code on Debian"
 date: 2019-07-26
 tags: [Django, Visual Studio Code, Debian]
-excerpt: "Create Django environment with VS Code in Debian"
+excerpt: "Create Django environment with VS Code on Debian"
 header:
     image: /assets/images/beautiful_blossom.jpg
     caption: "Photo credit: [**Pixabay**](https://pixabay.com/)"
