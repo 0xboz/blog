@@ -69,6 +69,48 @@ int main()
   return 0;
 }
 ```
+
+<div class="notice--info">
+  <p>Exercise 2.15: Which of the following definitions, if any, are invalid? Why?</p>
+</div>
+
+```cpp
+// (a)
+int ival = 1.01;  // ok: using a float to initialize int is likely to lose data. The fractional part will be truncated.
+// (b)
+int &rval1 = 1.01;  // error: initializer must be an int object
+// (c)
+int &rval2 = ival;  // ok
+// (d)
+int &rval3;  // error: a reference must be initialized when defined
+```
+
+<div class="notice--info">
+  <p>Exercise 2.16: Which, if any, of the following assignments are invalid? If they are valid, explain what they do.</p>
+</div>
+
+```cpp
+int i = 0, &r1 = i; double d = 0, &r2 = d;
+// (a)
+r2 = 3.14159;  // d = 3.14159
+// (b)
+r2 = r1;  // ok: d = i
+// (c)
+i = r2;  // ok: i = d
+// (d)
+r1 = d;  // ok: i = d
+```
+
+<div class="notice--info">
+  <p>Exercise 2.17: What does the following code print?</p>
+</div>
+
+```cpp
+int i, &ri = i;
+i = 5; ri = 10;
+std::cout << i << " " << ri << std::endl;  // 10 10
+```
+
 <div class="notice--info">
   <p>Exercise 2.26: Which of the following are legal? For those that are illegal,explain why.</p>
 </div>
