@@ -112,6 +112,82 @@ std::cout << i << " " << ri << std::endl;  // 10 10
 ```
 
 <div class="notice--info">
+  <p>Exercise 2.18: Write code to change the value of a pointer. Write code to change the value to which the pointer points.</p>
+</div>
+
+```cpp
+int main()
+{
+  int val = 1; 
+  int *p = nullptr;  // initialize a null pointer
+  p = &val;  // change the value of pointer p to the address of variable val
+  *p = 2;   // change the variable val value to which the pointer p points
+  return 0;
+}
+```
+
+<div class='notice--info'>
+  <p>Exercise 2.19: Explain the key differences between pointers and references.</p>
+</div>
+
+```cpp
+// 1. (Regular) References must be initialized at declaration; pointers don't need to.
+// 2. References are immutable during their life time.
+// 3. References are not objects but alias of other objects; pointers are objects themselves holding the addresses of other objects.
+```
+
+<div class='notice--info'>
+  <p>Exercise 2.20: What does the following program do?</p>
+</div>
+
+```cpp
+int i = 42;  // define int i and initialize i with a value of 42 
+int *p1 = &i;  // define p1 as a pointer to int, which points to the address of int i
+*p1 = *p1 * *p1;  // change the value of i to which p1 points to; the new value of i equals to the previous i value squared
+```
+<div>
+  <p>Exercise 2.21: Explain each of the following definitions. Indicate whether any are illegal and, if so, why.</p>
+</div>
+
+```cpp
+int i = 0;
+// (a)
+double* dp = &i;  // error: dp as a pointer to double, must point to a double; type mismatch
+// (b)
+int *ip = i;  // error: ip as a pointer to int, must point to the address of an int i, not int i itself
+// (c)
+int *p = &i;  // ok: p as a pointer to int points to the address of int i
+```
+
+<div>
+  <p>Exercise 2.22: Assuming p is a pointer to int, explain the following code:</p>
+</div>
+
+```cpp
+if (p) // ...  // if p is not a null pointer, the statement is true; otherwise false
+if (*p) // ... // if the int to which p points to is non-zero, the statement is true; otherwise false
+```
+
+<div>
+  <p>Exercise 2.23: Given a pointer p, can you determine whether p points to a valid object? If so, how? If not, why not?</p>
+</div>
+
+```cpp
+// No, you can't. Because it would be expensive to maintain meta data about what constitutes a valid pointer and what doesn't, and in C++ you don't pay for what you don't want.
+// https://stackoverflow.com/questions/17202570/c-is-it-possible-to-determine-whether-a-pointer-points-to-a-valid-object/17202622#17202622
+```
+
+<div>
+  <p>Exercise 2.24: Why is the initialization of p legal but that of lp illegal?</p>
+</div>
+
+```cpp
+int i = 42;    
+void *p = &i;  // ok: void* is a special pointer which can point to objects with a variety of types.
+long *lp = &i;  // error: the pointer to long lp must hold the address of a long; type mismatch
+```
+
+<div class="notice--info">
   <p>Exercise 2.26: Which of the following are legal? For those that are illegal,explain why.</p>
 </div>
 
