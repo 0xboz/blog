@@ -187,6 +187,19 @@ void *p = &i;  // ok: void* is a special pointer which can point to objects with
 long *lp = &i;  // error: the pointer to long lp must hold the address of a long; type mismatch
 ```
 
+<div class='notice--info'>
+  <p>Exercise 2.25: Determine the types and values of each of the following variables.</p>
+</div>
+
+```cpp
+// (a) 
+int* ip, &r = ip;  // ip is a pointer to int; r is a reference to pointer ip
+// (b) 
+int i, *ip = 0;  // define int i; ip is a reference to int and initialized to null
+// (c) 
+int* ip, ip2;  // ip is a pointer to int; ip2 is an int
+```
+
 <div class="notice--info">
   <p>Exercise 2.26: Which of the following are legal? For those that are illegal,explain why.</p>
 </div>
