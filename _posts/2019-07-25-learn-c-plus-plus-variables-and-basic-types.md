@@ -145,7 +145,7 @@ int i = 42;  // define int i and initialize i with a value of 42
 int *p1 = &i;  // define p1 as a pointer to int, which points to the address of int i
 *p1 = *p1 * *p1;  // change the value of i to which p1 points to; the new value of i equals to the previous i value squared
 ```
-<div>
+<div class='notice--info'>
   <p>Exercise 2.21: Explain each of the following definitions. Indicate whether any are illegal and, if so, why.</p>
 </div>
 
@@ -159,7 +159,7 @@ int *ip = i;  // error: ip as a pointer to int, must point to the address of an 
 int *p = &i;  // ok: p as a pointer to int points to the address of int i
 ```
 
-<div>
+<div class='notice--info'>
   <p>Exercise 2.22: Assuming p is a pointer to int, explain the following code:</p>
 </div>
 
@@ -168,7 +168,7 @@ if (p) // ...  // if p is not a null pointer, the statement is true; otherwise f
 if (*p) // ... // if the int to which p points to is non-zero, the statement is true; otherwise false
 ```
 
-<div>
+<div class='notice--info'>
   <p>Exercise 2.23: Given a pointer p, can you determine whether p points to a valid object? If so, how? If not, why not?</p>
 </div>
 
@@ -177,7 +177,7 @@ if (*p) // ... // if the int to which p points to is non-zero, the statement is 
 // https://stackoverflow.com/questions/17202570/c-is-it-possible-to-determine-whether-a-pointer-points-to-a-valid-object/17202622#17202622
 ```
 
-<div>
+<div class='notice--info'>
   <p>Exercise 2.24: Why is the initialization of p legal but that of lp illegal?</p>
 </div>
 
