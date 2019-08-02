@@ -51,14 +51,14 @@ sudo service postgresql status
 By default, the installation process will create a superuser named ```postgres```. This particular account is recommended to be used locally without password.
 
 To access this account locally, you have two options:
-* 1. Switch to postgres account and type psql
+* Switch to postgres account and type psql
 
 ```
 sudo su - postgres
 psql
 ```
 
-* 2. Run this command 
+* Or you can run this command instead 
 
 ```
 sudo -u postgres psql
