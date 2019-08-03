@@ -369,8 +369,8 @@ def api_to_bundle(interval='1m'):
 Here is a sample output.
 
 <figure>
-    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/binance_api_zipline_bundle_results.png">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/binance_api_zipline_bundle_results.png">
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images//binance_api_zipline_bundle_results.jpg">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images//binance_api_zipline_bundle_results.jpg">
     </a>
     <figcaption>Binance API Zipline custom bundle</figcaption>
 </figure>
