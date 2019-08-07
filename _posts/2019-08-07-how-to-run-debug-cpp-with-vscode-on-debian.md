@@ -53,7 +53,7 @@ Furthermore, we can expand the settings to support newer functions introduced in
 },
 ```
 
-You should be able to compile your ```.cpp``` files and generate excutable programs now. 
+You should be able to compile your ```.cpp``` files and generate executable programs now. 
 
 ### Debug C++ Code
 
