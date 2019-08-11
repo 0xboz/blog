@@ -8,7 +8,7 @@ header:
     caption: "Photo credit: [**John Cahil Rom**](https://www.pexels.com/@cahilrom)"
 ---
 
-[Visual Studio Code](https://code.visualstudio.com/) is a source code editor among many developers. This tutorial is going to show you how to run and debug lightweight C++ codes in it. 
+[Visual Studio Code](https://code.visualstudio.com/) is a popular source code editor among many developers. This tutorial is going to show you how to run and debug lightweight C++ codes in it. 
 
 Since my desktop runs on Debian, you might need to make a few minor changes for Windows PC and macOS. 
 
@@ -59,7 +59,7 @@ You should be able to compile your ```.cpp``` files and generate executable prog
 
 Here comes another question: how can I utilize VSCode debug option with C++ codes?
 
-First of all, let us check if our system have GNU Debugger installed.
+First of all, let us check if our system has GNU Debugger installed.
 
 ```
 sudo apt install gdb
