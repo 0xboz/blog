@@ -2,7 +2,7 @@
 title: "How to Run Boost.Beast with Visual Studio Code and CLion on Debian"
 date: 2019-08-30
 tags: [C++, Boost, Beast, Visual Studio Code, CLion, Debian]
-excerpt: "Run and debug C++ with Visual Studio Code on Debian"
+excerpt: "Run Boost.Beast with Visual Studio Code and CLion on Debian"
 header:
     image: /assets/images/night_city_skyline.jpg
     caption: "Photo credit: [**Amar Saleem**](https://www.pexels.com/@amar-saleem-15661)"
