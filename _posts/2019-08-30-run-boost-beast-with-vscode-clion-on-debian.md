@@ -92,7 +92,7 @@ If all goes well, now you can build `beast_demo.cpp` by clicking code-runner "Pl
 
 ```
 cmake_minimum_required(VERSION 3.14)
-project(demo)
+project(beast_demo)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -101,9 +101,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lboost_system -pthread")
 find_package(Boost)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
-    add_executable(demo_boost main.cpp)
+    add_executable(beast_demo main.cpp)
 else()
-    add_executable(demo main.cpp)
+    add_executable(beast main.cpp)
 endif()
 ```
 
