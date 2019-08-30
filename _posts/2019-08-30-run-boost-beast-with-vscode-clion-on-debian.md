@@ -113,7 +113,7 @@ Notice, both C++11 and C++14 should be working in our setup.
 
 Here comes the question.
 
-> Is it possible to use a newer version of Boost.Beast (1.70.0 at the time of writing) in our setup? 
+> Is it possible to use a newer version of Boost.Beast (1.71.0 at the time of writing) in our setup? 
 
 Stay tuned and I will update this tutorial shortly.  
 
