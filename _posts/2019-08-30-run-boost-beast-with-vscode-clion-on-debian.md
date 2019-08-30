@@ -15,7 +15,7 @@ header:
 
 ## Install Boost on Debian 9
 
-At time of writing, the default repo of Debian 9 only supports Boost 1.62.0, where the newly developed Beast lib has not been added. Fortunately, we can install relatively newer version of Boost 1.67.0 loaded with Beast through [Debian backports](https://backports.debian.org/).  
+At the time of writing, the default repo of Debian 9 only supports Boost 1.62.0, where the newly developed Beast lib has not been added. Fortunately, we can install relatively newer version of Boost 1.67.0 loaded with Beast through [Debian backports](https://backports.debian.org/).  
 
 In case you do not have backports enabled yet, create a file named `backports.list` in `/etc/apt/sources.list.d/`.  
 
@@ -113,7 +113,7 @@ Notice, both C++11 and C++14 should be working in our setup.
 
 Here comes the question.
 
-> Is it possible to use newer version of Boost.Beast (1.70.0 at the time of writing) in our setup? 
+> Is it possible to use a newer version of Boost.Beast (1.70.0 at the time of writing) in our setup? 
 
 Stay tuned and I will update this tutorial shortly.  
 
