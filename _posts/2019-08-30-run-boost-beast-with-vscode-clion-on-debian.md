@@ -8,11 +8,6 @@ header:
     caption: "Photo credit: [**Amar Saleem**](https://www.pexels.com/@amar-saleem-15661)"
 ---
 
-errors
-https://stackoverflow.com/questions/16257564/linker-error-undefined-reference-to-symbol-pthread-rwlock-trywrlockglibc-2-2#16259726
-
-https://stackoverflow.com/questions/13467072/c-boost-undefined-reference-to-boostsystemgeneric-category#13468280
-
 > Beast is a C++ header-only library serving as a foundation for writing interoperable networking libraries by providing low-level HTTP/1, WebSocket, and networking protocol vocabulary types and algorithms using the consistent asynchronous model of Boost.Asio.
 
 [Beast](https://github.com/boostorg/beast), created by [Vinnie Falco](https://github.com/vinniefalco), is part of [Boost C++ Libraries](https://www.boost.org/). In this tutorial, I am going to show you how to run a Boost.Beast sample code with [VSCode](https://code.visualstudio.com/) and [CLion](https://www.jetbrains.com/clion/) on [Debian](https://www.debian.org/) 9.
@@ -76,6 +71,11 @@ The additional flags (`-lboost_system` and `-pthread`) are meant to address two 
 > undefined reference to `boost::system::system_category()'  
 
 > undefined reference to symbol 'pthread_condattr_setclock@@GLIBC_2.3.3'  
+
+Reference: 
+* [Linker error: undefined reference to symbol 'pthread_rwlock_trywrlock@@GLIBC_2.2.5'](https://stackoverflow.com/questions/16257564/linker-error-undefined-reference-to-symbol-pthread-rwlock-trywrlockglibc-2-2#16259726)  
+* [C++ Boost: undefined reference to boost::system::generic_category()](https://stackoverflow.com/questions/13467072/c-boost-undefined-reference-to-boostsystemgeneric-category#13468280)
+
 
 If all goes well, now you can build `beast_demo.cpp` by clicking code-runner "Play Button". Here is the response from my terminal.  
 
