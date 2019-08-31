@@ -109,13 +109,54 @@ endif()
 
 Notice, both C++11 and C++14 should be working in our setup.
 
-## Newer Beast Library
+## Newer Boost.Beast Library
 
 Here comes the question.
 
 > Is it possible to use a newer version of Boost.Beast (1.71.0 at the time of writing) in our setup? 
 
-Stay tuned and I will update this tutorial shortly.  
+Before we install the newer version of Boost, let us remove the older one first.
+
+```
+sudo apt remove -y libboost1.67-all-dev sudo apt autoremove -y
+```
+
+If you need to build Boost with unicode support, run this command below.  
+
+```
+sudo apt install -y libicu-dev
+```
+
+Now we can get the latest version of Boost from its official download page. 
+
+```
+cd Downloads
+wget https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.bz2
+tar xv boost_1_71_0.tar.bz2
+cd boost_1_71_0
+```
+
+In this directory, we can find a buidl configuration script called `bootstrap.sh`, which is used to generate `b2` program. 
+
+```
+./bootstrap.sh --prefix=/usr/local --with-python=python3 --with-icu
+```
+The `--prefix=/usr/local` tells the location where Boost will place the files it builds. Additionally, our build will also have Python 3 and unicode support by `--with-python=python3` and `--with-icu`, respectively.  
+
+The actual build starts by running this command.
+
+```
+sudo b2 install
+```
+
+> Uninstall what we just installed?  
+
+You got it!
+
+```
+sudo rm -r /usr/local/include/boost
+sudo rm -r /usr/local/lib/libboost*  
+```
 
 I hope you liked this short tutorial. Stay tuned by signing up for [my newsletter](http://eepurl.com/gxmy39). If you have any questions/comments/proposals, feel free to shoot me a message on [Twitter](https://twitter.com/0xboz)/[Discord](https://discord.gg/jchMcc2)/[Patreon](https://www.patreon.com/0xboz). 
 
