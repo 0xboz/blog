@@ -98,13 +98,20 @@ set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lboost_system -pthread")
 
-find_package(Boost)
+# Boost
+# Find Boost headers and some static (release only) libraries
+set(Boost_USE_STATIC_LIBS        ON)  # only find static libs
+set(Boost_USE_DEBUG_LIBS         OFF) # ignore debug libs and
+set(Boost_USE_RELEASE_LIBS       ON)  # only find release libs
+set(Boost_USE_MULTITHREADED      ON)
+set(Boost_USE_STATIC_RUNTIME    OFF)
+find_package(Boost COMPONENTS ...)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
     add_executable(beast_demo main.cpp)
-else()
-    add_executable(beast main.cpp)
+    target_link_libraries(beast_demo ${Boost_LIBRARIES})
 endif()
+
 ```
 
 Notice, both C++11 and C++14 should be working in our setup.
