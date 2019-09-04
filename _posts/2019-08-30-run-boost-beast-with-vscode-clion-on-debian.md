@@ -83,10 +83,16 @@ Add those two flags `-lssl -lcrypto` if you have an error message like this
         <img src="{{ site.url }}{{ site.baseurl }}/assets/images/boost_asio_ssl_errors.png">
     </a>
     <figcaption>Boost.Asio SSL Error</figcaption>
-</figure>  
+</figure>
 
 Reference:  
 * [Boost and ssl client server building issue on Linux](https://stackoverflow.com/questions/29118667/boost-and-ssl-client-server-building-issue-on-linux)
+
+In addition, you might need to check if Secure Sockets Layer toolkit has been installed yet.
+
+```
+sudo apt install -y libssl-dev
+```
 
 If all goes well, now you can build `beast_demo.cpp` by clicking code-runner "Play Button". Here is the response from my terminal.  
 
