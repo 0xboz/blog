@@ -60,7 +60,7 @@ Replace it with the following.
 
 ```json
 "code-runner.executorMap": {
-    "cpp": "cd $dir && g++ -std=c++11 -lboost_system -pthread $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    "cpp": "cd $dir && g++ -std=c++11 -lboost_system -lssl -lcrypto -pthread $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
 },
 ```
 
@@ -76,6 +76,17 @@ Reference:
 * [Linker error: undefined reference to symbol 'pthread_rwlock_trywrlock@@GLIBC_2.2.5'](https://stackoverflow.com/questions/16257564/linker-error-undefined-reference-to-symbol-pthread-rwlock-trywrlockglibc-2-2#16259726)  
 * [C++ Boost: undefined reference to boost::system::generic_category()](https://stackoverflow.com/questions/13467072/c-boost-undefined-reference-to-boostsystemgeneric-category#13468280)
 
+Add those two flags `-lssl -lcrypto` if you have an error message like this  
+
+<figure>
+    <a href="{{ site.url }}{{ site.baseurl }}/assets/images/boost_asio_ssl_errors.png">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/boost_asio_ssl_errors.png">
+    </a>
+    <figcaption>Boost.Asio SSL Error</figcaption>
+</figure>  
+
+Reference:  
+* [Boost and ssl client server building issue on Linux](https://stackoverflow.com/questions/29118667/boost-and-ssl-client-server-building-issue-on-linux)
 
 If all goes well, now you can build `beast_demo.cpp` by clicking code-runner "Play Button". Here is the response from my terminal.  
 
@@ -96,7 +107,7 @@ project(beast_demo)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lboost_system -pthread")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lboost_system -lssl -lcrypto -pthread")
 
 # Boost
 # Find Boost headers and some static (release only) libraries
