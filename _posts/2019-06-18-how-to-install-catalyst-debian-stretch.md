@@ -33,4 +33,4 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> from catalyst import run_algorithm
 >>> 
 ```
-Awesome! I hope this short post can be helpful to someone who is new to Catalyst. I also created a ```QUANT CHANNEL``` on one of the most popular crypto servers (Ripple XRP). Feel like stopping by and say hi? We have tons of down-to-earth folks who have been in crypto-verse for a long time. Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/jchMcc2). 
+Awesome! I hope this short post can be helpful to someone who is new to Catalyst. Feel like stopping by and say hi? Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/JHt7UQu). 

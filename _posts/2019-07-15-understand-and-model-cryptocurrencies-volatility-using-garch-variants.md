@@ -9,7 +9,7 @@ header:
 
 I had a difficult time to understand GARCH and its variants. In this post, I am going to show you what I have come across while learning and experimenting on this topic. If you are well-versed in this area, please do keep reading and point out the mistakes in this piece. Hopefully, it will help someone in the future.
 
-We are going to use BTCUSD as an example for the rest of this article. Feel free to try the following techniques on other cryptocurrencies pairs. Shoot me a message on [Patreon](https://www.patreon.com/0xboz), [Discord](https://discord.gg/jchMcc2) or [Twitter](https://twitter.com/0xboz) and let me know what you have found.
+We are going to use BTCUSD as an example for the rest of this article. Feel free to try the following techniques on other cryptocurrencies pairs. Shoot me a message on [Patreon](https://www.patreon.com/0xboz), [Discord](https://discord.gg/JHt7UQu) or [Twitter](https://twitter.com/0xboz) and let me know what you have found.
 
 You might also like to [sign up for my newsletter](http://eepurl.com/gxmy39) and stay tuned with the latest articles.
 

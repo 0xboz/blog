@@ -56,4 +56,4 @@ We can create a new integrated terminal in VS Code by ``` Ctrl+` ```. By default
 (venv) pip install django
 ```
 
-That's it! I hope you liked this short tutorial. Stay tuned by signing up for [my newsletter](http://eepurl.com/gxmy39). If you have any questions/comments/proposals, feel free to shoot me a message on [Twitter](https://twitter.com/0xboz)/[Discord](https://discord.gg/jchMcc2)/[Patreon](https://www.patreon.com/0xboz). Happy coding!
+That's it! I hope you liked this short tutorial. Stay tuned by signing up for [my newsletter](http://eepurl.com/gxmy39). If you have any questions/comments/proposals, feel free to shoot me a message on [Twitter](https://twitter.com/0xboz)/[Discord](https://discord.gg/JHt7UQu)/[Patreon](https://www.patreon.com/0xboz). Happy coding!

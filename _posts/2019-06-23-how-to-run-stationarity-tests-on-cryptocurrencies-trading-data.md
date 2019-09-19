@@ -218,6 +218,6 @@ Finally, run this script in the terminal
 (venv) python catalyst_test.py
 ```
 
-I hope you enjoyed this tutorial. As always, the source code can be found on my [github](https://github.com/0xboz/stationarity_on_crypto_trading_data) as well. Feel free to shoot me a message if you have any questions/comments. I also created a ```QUANT CHANNEL``` on one of the most popular crypto servers (Ripple XRP). Feel like stopping by and say hi? We have tons of down-to-earth folks who have been in crypto-verse for a long time. Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/jchMcc2).
+I hope you enjoyed this tutorial. As always, the source code can be found on my [github](https://github.com/0xboz/stationarity_on_crypto_trading_data) as well. Feel free to shoot me a message if you have any questions/comments. Feel like stopping by and say hi? Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/JHt7UQu).
 
 Stay safe and happy trading. 

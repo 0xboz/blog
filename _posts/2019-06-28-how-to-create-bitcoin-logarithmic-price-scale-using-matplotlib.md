@@ -198,7 +198,7 @@ plt.subplots_adjust(left=0.1, bottom=0.05, right=0.94, top=0.96, wspace=0.2, hsp
 plt.show()
 ```
 
-Send me a message if you have any questions/comments. I also created a ```QUANT CHANNEL``` on one of the most popular crypto servers (Ripple XRP). Feel like stopping by and say hi? We have tons of down-to-earth folks who have been in crypto-verse for a long time. Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/jchMcc2). 
+Send me a message if you have any questions/comments. Feel like stopping by and say hi? Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/JHt7UQu). 
 
 Stay calm and happy trading!
 

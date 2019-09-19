@@ -514,7 +514,7 @@ The complete code base can be found on my
 Stay tuned by signing up for [my newsletter](http://eepurl.com/gxmy39). 
 If you have any questions/comments/proposals, feel free to shoot me a 
 message on [Twitter](https://twitter.com/0xboz)/
-[Discord](https://discord.gg/jchMcc2)/
+[Discord](https://discord.gg/JHt7UQu)/
 [Patreon](https://www.patreon.com/0xboz). 
 
 Happy coding!

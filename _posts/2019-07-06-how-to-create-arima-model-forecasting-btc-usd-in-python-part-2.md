@@ -416,4 +416,4 @@ This might be the end of our series. We could explore a bit further by incoporat
 
 As always, all source code can be found on [my github](https://github.com/0xboz/ARIMA_forecasting_BTCUSD).
 
-I hope you have enjoyed this series, and please do not forget to check out [our quant channel](https://discord.gg/jchMcc2). Feel free to shoot me a message if you have any questions/comments/proposals. Ciao!  
+I hope you have enjoyed this series, and please do not forget to check out [our quant channel](https://discord.gg/JHt7UQu). Feel free to shoot me a message if you have any questions/comments/proposals. Ciao!  

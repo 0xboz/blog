@@ -450,4 +450,4 @@ conda activate zipline
 (zipline) zipline ingest -b binance_csv
 ```
 
-In part 2 of this tutorial, we are going to take a look how to create custom data bundles directly from Binance public API. I also created a ```QUANT CHANNEL``` on one of the most popular crypto servers (Ripple XRP). Feel like stopping by and say hi? We have tons of down-to-earth folks who have been in crypto-verse for a long time. Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/jchMcc2). Cheers!
+In part 2 of this tutorial, we are going to take a look how to create custom data bundles directly from Binance public API. Feel like stopping by and say hi? Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/JHt7UQu). Cheers!

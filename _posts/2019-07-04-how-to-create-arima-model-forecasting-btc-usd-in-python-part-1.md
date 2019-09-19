@@ -421,7 +421,7 @@ According to [Augmented Dickey-Fuller (ADF)](https://en.wikipedia.org/wiki/Augme
 
 Usually, we can just take the natural log of the price and be done with it, but I am going to show you another general yet powerful tool called [Box-Cox Transformation](https://en.wikipedia.org/wiki/Power_transform#Box%E2%80%93Cox_transformation) in the upcoming [part 2](https://0xboz.github.io/blog/how-to-create-arima-model-forecasting-btc-usd-in-python-part-2/). All source code can be found on [my github](https://github.com/0xboz/ARIMA_forecasting_BTCUSD). Meanwhile, if you have any questions/comments/proposals, feel free to shoot me a message. 
 
-I have also created one [QUANT channel](https://discord.gg/jchMcc2) in one of the most popular discords in cryptoverse. Stop by and say hi to those down-to-earth crypto folks.
+I have also created one [QUANT channel](https://discord.gg/JHt7UQu) in one of the most popular discords in cryptoverse. Stop by and say hi to those down-to-earth crypto folks.
 
 Stay calm and happy trading!
 

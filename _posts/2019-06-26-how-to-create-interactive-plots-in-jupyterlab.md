@@ -85,4 +85,4 @@ If everyting works, you should see the interactive plot of bitcoin price from 20
     <figcaption>Interactive plots in JupyterLab</figcaption>
 </figure>
 
-That is all for this post. I hope you find something useful in it, and let me know if you have any questions/comments. I also created a ```QUANT CHANNEL``` on one of the most popular crypto servers (Ripple XRP). Feel like stopping by and say hi? We have tons of down-to-earth folks who have been in crypto-verse for a long time. Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/jchMcc2). Ciao!
+That is all for this post. I hope you find something useful in it, and let me know if you have any questions/comments. Feel like stopping by and say hi? Let us talk more about crypto and quantitative trading over there. [Here is the discord invite link](https://discord.gg/JHt7UQu). Ciao!
