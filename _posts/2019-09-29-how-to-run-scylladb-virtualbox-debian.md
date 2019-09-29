@@ -17,7 +17,7 @@ I came across [ScyllaDB](https://www.scylladb.com/) while I was researching how 
 
 Conventionally, traders might use relational database like [MySQL](https://www.mysql.com/) and [PostgreSQL](https://www.postgresql.org/) to get the job done. I believe there might be a better alternative to deal with Time Series data, for instance, [OpenTSDB](http://opentsdb.net/) and [Apache Cassandra](https://cassandra.apache.org/).
 
-I have [a similar post](https://0xboz.github.io/blog/how-to-use-virtualbox-as-a-remote-postgresql-server/) about using VirtualBox as a remote PostgreSQL server. In this post, however, we are going to explore the setup of the C++ cousin of Apache Cassandra - ScyllaDB on VirtualBox guest Debian. [The official documentation](https://www.scylladb.com/download/open-source/scylla-virtualbox/) of ScyllaDB has a test-drive on VirtualBox. However, they have only mentioned the setup for [RHEL](https://www.redhat.com/) and [CentOS](https://centos.org/) for some reason. I hope this tutorial will serve a complimentary doc for that purpose. 
+I have [a similar post](https://0xboz.github.io/blog/how-to-use-virtualbox-as-a-remote-postgresql-server/) about using VirtualBox as a remote PostgreSQL server. In this post, however, we are going to explore the setup of the C++ cousin of Apache Cassandra - ScyllaDB on VirtualBox guest Debian. [The official documentation](https://www.scylladb.com/download/open-source/scylla-virtualbox/) of ScyllaDB has a test-drive on VirtualBox. However, they have only mentioned the setup for [RHEL](https://www.redhat.com/) and [CentOS](https://centos.org/) for some reason. I hope this tutorial will serve as a complimentary doc for that purpose. 
 
 ### VB Guest Debian Installation (```netinst```)
 [Download Debian netinst cd](https://www.debian.org/distrib/netinst#netboot). 
@@ -113,8 +113,8 @@ sudo systemctl start scylla-server.service
 Connect to ScyllaDB via cqlsh
 ```
 cqlsh 10.0.2.15
-```
+```  
 
-I hope you have enjoyed this short tutorial. Stay tuned by signing up for [my newsletter](http://eepurl.com/gxmy39). If you have any questions/comments/proposals, feel free to shoot me a message on [Twitter](https://twitter.com/0xboz)/[Discord](https://discord.gg/JHt7UQu)/[Patreon](https://www.patreon.com/0xboz). 
+I hope you have enjoyed this short tutorial. 
 
-Happy Trading!
+Stay tuned by signing up for [my newsletter](http://eepurl.com/gxmy39). If you have any questions/comments/proposals, feel free to shoot me a message on [Twitter](https://twitter.com/0xboz)/[Discord](https://discord.gg/JHt7UQu)/[Patreon](https://www.patreon.com/0xboz). Happy Trading!
